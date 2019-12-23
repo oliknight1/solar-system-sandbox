@@ -2,7 +2,7 @@
 
 ## TO-DO
 
-###Urgetnt
+### Urgent
 - Images for planets,sun,moon
 - A menu
 - Add sliders to the menu to change properties of objects & Camera
