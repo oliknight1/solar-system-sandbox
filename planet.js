@@ -1,9 +1,10 @@
 class Planet {
-    constructor() {
-        this.position = createVector(0, 0, 100);
-        this.velocity = createVector(0.6, 0, 0);
+    constructor(r) {
+        this.position = createVector(0, 0, 150);
+        this.velocity = createVector(2.2, 2.2, 0);
         this.acceleration = createVector(0, 0, 0);
-        this.mass = 2
+        this.r = r;
+        this.mass = r * 10
     }
     applyForce(force) {
         force = p5.Vector.div(force, this.mass)
@@ -18,7 +19,7 @@ class Planet {
         push()
         fill(0, 100, 255)
         translate(this.position.x, this.position.y, this.position.z)
-        sphere(this.mass * 10)
+        sphere(this.r)
         pop()
     }
     checkEdges() {
