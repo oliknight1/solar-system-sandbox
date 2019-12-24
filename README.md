@@ -12,3 +12,4 @@
 - Help page
 - Reset camera button
 - Delete all objects button
+- Add lighting to the planets?
