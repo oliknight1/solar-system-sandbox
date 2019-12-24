@@ -1,6 +1,8 @@
 class Sun {
-    constructor() {
-        this.mass = 30
+    constructor(r) {
+
+        this.r = r;
+        this.mass = r * 10;
         /* gravitational constant for equation
          * the actual number is 6.674 * Math.pow(10, -11), but doesn't need to be exact
          * might want to mess around with using the specific number though */
@@ -34,7 +36,7 @@ class Sun {
         push()
         fill(255, 255, 0);
         translate(this.position.x, this.position.y, this.position.z)
-        sphere(this.mass * 2);
+        sphere(this.r);
         pop()
     }
 }

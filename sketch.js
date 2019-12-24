@@ -4,12 +4,12 @@
 
 
  function setup() {
-     createCanvas(640, 360, WEBGL)
+     createCanvas(windowWidth, windowHeight, WEBGL)
 
      // Mover is the object that orbits, (smaller circle)
      // Attractor is the one that pulls the object in (Bigger circle)
-     planet = new Planet();
-     sun = new Sun();
+     planet = new Planet(50);
+     sun = new Sun(100);
 
  }
 
