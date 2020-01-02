@@ -34,6 +34,7 @@ class Sun {
     }
     display() {
         push()
+
         fill(255, 255, 0);
         translate(this.position.x, this.position.y, this.position.z)
         sphere(this.r);

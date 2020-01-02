@@ -1,4 +1,6 @@
+var rot = 0; //planet rotation variable 
 class Planet {
+
     constructor(r) {
         this.position = createVector(0, 0, 150);
         this.velocity = createVector(2.2, 2.2, 0);
@@ -16,10 +18,14 @@ class Planet {
         this.acceleration.mult(0); // reset acceleration
     }
     display() {
+
         push()
-        fill(0, 100, 255)
+        noStroke();
+        texture(images); // display one of the images
         translate(this.position.x, this.position.y, this.position.z)
+        rotateY(rot); //rotate the planet on the y axis are the speed the variable says
         sphere(this.r)
+        rot += 0.01;  //the speed the planet rotates
         pop()
     }
     checkEdges() {
