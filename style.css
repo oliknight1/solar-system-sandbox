@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+}
+
+#sketch-canvas {
+    display: inline-block;
+    width: 80vw;
+    height: 100vh;
+}
+
+.menu {
+    height: 100vh;
+    width: 20vw;
+    /* Change to rgb(30, 30, 30) when p5 background is in */
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu button {
+    width: 50%;
+    height: 5vh;
+    margin: 3em 0;
+
+}

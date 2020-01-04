@@ -1,29 +1,71 @@
- let force;
- let planet;
- let sun;
+let planet;
+let sun;
 
 
- function setup() {
-     createCanvas(windowWidth, windowHeight, WEBGL)
+let force;
+let force2;
 
-     // Mover is the object that orbits, (smaller circle)
-     // Attractor is the one that pulls the object in (Bigger circle)
-     planet = new Planet(50);
-     sun = new Sun(100);
+/* Use the const with .value when creating the planet to use the default size on the slider,
+ * then use updateSizen with the let as the parameter
+ */
 
- }
+const planetSize = document.querySelector("#planet-size");
+let planetSizeValue;
 
- function draw() {
-     background(30);
+const sunSize = document.querySelector("#sun-size");
+let sunSizeValue = 0;
 
-     force = new p5.Vector();
-     force = sun.attract(planet);
+// Getting the height and width if the div the canvas is in
+const div = document.getElementById("sketch-canvas");
+let divWidth = div.offsetWidth;
+let divHeight = div.offsetHeight;
 
 
-     planet.applyForce(force);
-     planet.update();
 
-     sun.display();
-     planet.display();
+function setup() {
 
- }
+    // Add the sketch to the div 
+    const sketchCanvas = createCanvas(divWidth, divHeight, WEBGL);
+    sketchCanvas.parent("sketch-canvas")
+
+
+    sun = new Sun(sunSize.value);
+
+    planet = new Planet(planetSize.value);
+
+
+
+
+
+}
+
+
+function draw() {
+    force = new p5.Vector();
+
+    planetSizeValue = planetSize.value;
+    sunSizeValue = sunSize.value;
+    background(30);
+
+
+    force = sun.attract(planet);
+
+
+    planet.applyForce(force);
+
+
+
+
+    planet.move();
+
+
+    planet.updateSize(planetSizeValue);
+    sun.updateSize(sunSizeValue);
+    sun.display();
+    planet.display();
+
+}
+// Makes sure canvas stays the same size when the browser is resized
+function windowResized() {
+    createCanvas(divWidth, divHeight, WEBGL);
+}
