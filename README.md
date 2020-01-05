@@ -6,6 +6,7 @@
 
 - Images for planets,sun,moon
 - Finishing adding rest of sliders (Oli)
+- Powerpoint
 ### Less urgent
 - Stars background
 - Help page
