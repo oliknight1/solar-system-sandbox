@@ -2,8 +2,22 @@ let planet;
 let sun;
 let force;
 let force2;
+
 let stars;
 let starSize = 4500;
+
+
+
+/* Variables for images*/
+const img = ["images/blueP-01.jpg",
+    "images/orenP-01.jpg", "images/whitP-01.jpg",
+    "images/greenP-01.jpg", "images/yellP-01.jpg",
+    "images/cyanP-01.jpg", "images/dotP-01.jpg"
+];
+let images;
+
+
+
 /* Use the const with .value when creating the planet to use the default size on the slider,
  * then use updateSizen with the let as the parameter
  */
@@ -34,8 +48,13 @@ let divHeight = div.offsetHeight;
 document.querySelector('#reset').addEventListener("click",resetCamera) 
 
 function preload() {
+
     stars = loadImage('img/stars.png');
     }
+
+    images = loadImage(random(img));
+}
+
 
 function setup() {
     
