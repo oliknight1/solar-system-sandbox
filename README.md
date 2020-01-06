@@ -4,15 +4,19 @@
 
 ### Urgent
 
-- Images for planets,sun,moon
-- Finishing adding rest of sliders (Oli)
+- Image for Sun (Tim)
 - Powerpoint
+- Add Moon (Oli)
+- Change planet Button (Tim)
+- Add static rotation (Tim)
+- Debug shit (Oli)
+
 ### Less urgent
-- Stars background
-- Help page
-- Reset camera button (Tyler)
-- Delete all objects button
-- Add lighting to the planets?
+- Help page (Tim)
+- Add lighting to the planets (Tyler)
+- Add planets to background (Tyler)
+
+
 
 
 ## Code Explaination 
