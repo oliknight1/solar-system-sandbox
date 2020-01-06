@@ -42,23 +42,23 @@ const div = document.getElementById("sketch-canvas");
 let divWidth = div.offsetWidth;
 let divHeight = div.offsetHeight;
 
- 
+
 
 // Event listener for Reset button for Camera HTML
-document.querySelector('#reset').addEventListener("click",resetCamera) 
+document.querySelector('#reset').addEventListener("click", resetCamera)
 
 function preload() {
 
     stars = loadImage('img/stars.png');
-    }
+
 
     images = loadImage(random(img));
 }
 
 
 function setup() {
-    
- 
+
+
     // Add the sketch to the div 
     const sketchCanvas = createCanvas(divWidth, divHeight, WEBGL);
     sketchCanvas.parent("sketch-canvas")
@@ -75,7 +75,7 @@ function draw() {
     background(0);
     push();
     texture(stars);
-    box(4500,4500,4500);
+    box(4500, 4500, 4500);
     translate(0, 0, [0]);
     pop();
 
@@ -89,7 +89,7 @@ function draw() {
 
     planetSizeValue = planetSize.value;
     sunSizeValue = sunSize.value;
-    
+
 
 
 
@@ -110,14 +110,14 @@ function draw() {
     sun.display();
     planet.display();
     //changes Camera parameters for  X,Y,Z 
-    camera(xPosValue,yPosValue,constrain(zPosValue,sunSizeValue,1000), 0, 0, 0, 0,1, 0);
+    camera(xPosValue, yPosValue, constrain(zPosValue, sunSizeValue, 1000), 0, 0, 0, 0, 1, 0);
 }
-    
-    
 
-    
-   
-    
+
+
+
+
+
 // Makes sure canvas stays the same size when the browser is resized
 function windowResized() {
     createCanvas(divWidth, divHeight, WEBGL);
@@ -126,9 +126,9 @@ function windowResized() {
 
 // 
 // Reset camera buttons
-function resetCamera(){
+function resetCamera() {
     document.getElementById('x-position').value = 0;
     document.getElementById('y-position').value = 0;
     document.getElementById('z-position').value = 700;
-    
-    }
+
+}
