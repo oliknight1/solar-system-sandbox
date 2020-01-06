@@ -30,9 +30,10 @@ class Planet extends Sun {
     display() {
 
         push()
-        fill(0, 100, 255)
-        translate(this.position.x, this.position.y, this.position.z)
-        sphere(this.planetR)
+        noStroke();
+        texture(images);
+        translate(this.position.x, this.position.y, this.position.z);
+        sphere(this.planetR);
         pop()
     }
 
