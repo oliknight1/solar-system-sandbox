@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solar System Sandbox</title>
-    <link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar System Sandbox</title>
+  <link rel="stylesheet" href="style.css">
 
-  </head>
+</head>
 
-  <body>
-    <!-- Menu for sliders -->
-    <div class="menu">
+<body>
 
-
-      <input type="range" name="planet-size" id="planet-size" min="10" max="100" value="50">
-      <label for="planet-size">
-        Planet Size
-      </label>
-      <input type="range" name="sun-size" id="sun-size" min="100" max="400" value="100">
-      <label for="sun-size">
-        Sun Size
+  <!-- Menu for sliders -->
+  <div class="menu">
+    <div id="name">
+      <label for="name">
+        GALAXY ENGINEER
       </label>
     </div>
-    <div id="sketch-canvas">
-      <!-- This is where the p5.js sketch is -->
-    </div>
-    <script src="p5.js"></script>
-    <script src="p5.dom.js"></script>
-    <script src="p5.sound.js"></script>
-    <script src="sun.js"></script>
-    <script src="planet.js"></script>
+    <label for="planet-size">
+      Planet Size
+    </label>
+    <input type="range" name="planet-size" id="planet-size" min="10" max="100" value="50">
+    <label for="sun-size">
+      Sun Size
+    </label>
+    <input type="range" name="sun-size" id="sun-size" min="100" max="400" value="100">
 
-    <script src="sketch.js"></script>
-  </body>
+  </div>
+  <div id="sketch-canvas">
+    <!-- This is where the p5.js sketch is -->
+  </div>
+
+  <script src="p5.js"></script>
+  <script src="p5.dom.js"></script>
+  <script src="p5.sound.js"></script>
+  <script src="sun.js"></script>
+  <script src="planet.js"></script>
+
+  <script src="sketch.js"></script>
+
+
+</body>
 
 </html>

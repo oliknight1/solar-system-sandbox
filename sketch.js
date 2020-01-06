@@ -20,7 +20,9 @@ const div = document.getElementById("sketch-canvas");
 let divWidth = div.offsetWidth;
 let divHeight = div.offsetHeight;
 
-
+function preload() {
+    sunImg = loadImage("images/sun-01.jpg")
+}
 
 function setup() {
 

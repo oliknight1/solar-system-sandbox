@@ -39,11 +39,10 @@ class Sun {
     }
     display() {
 
+        noStroke();
 
         push()
-
-
-        fill(255, 255, 0);
+        fill(255, 150, 0);
         translate(this.position.x, this.position.y, this.position.z)
         sphere(this.sunR);
         pop()
