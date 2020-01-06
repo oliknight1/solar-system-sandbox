@@ -1,4 +1,4 @@
-var rot = 0; //planet rotation variable 
+
 class Planet {
 
     constructor(r) {
@@ -17,7 +17,7 @@ class Planet {
         this.position.add(this.velocity);
         this.acceleration.mult(0); // reset acceleration
     }
-    display() {
+    display(rot) {
 
         push()
         noStroke();

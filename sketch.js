@@ -16,6 +16,7 @@ function setup() {
 
     // Mover is the object that orbits, (smaller circle)
     // Attractor is the one that pulls the object in (Bigger circle)
+    noStroke();
     planet = new Planet(50);
     sun = new Sun(100);
 
@@ -24,7 +25,7 @@ function setup() {
 }
 
 function draw() {
-
+    noStroke();
     background(20);
 
     ambientMaterial('#1C75AA');
@@ -40,6 +41,6 @@ function draw() {
     planet.update();
 
     sun.display();
-    planet.display();
+    planet.display(10);
 
 }
