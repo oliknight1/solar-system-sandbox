@@ -3,6 +3,10 @@ let sun;
 let force;
 let force2;
 
+let stars;
+let starSize = 4500;
+
+
 
 /* Variables for images*/
 const img = ["images/blueP-01.jpg",
@@ -11,6 +15,7 @@ const img = ["images/blueP-01.jpg",
     "images/cyanP-01.jpg", "images/dotP-01.jpg"
 ];
 let images;
+
 
 
 /* Use the const with .value when creating the planet to use the default size on the slider,
@@ -43,8 +48,13 @@ let divHeight = div.offsetHeight;
 document.querySelector('#reset').addEventListener("click",resetCamera) 
 
 function preload() {
+
+    stars = loadImage('img/stars.png');
+    }
+
     images = loadImage(random(img));
 }
+
 
 function setup() {
     
@@ -62,6 +72,12 @@ function setup() {
 
 
 function draw() {
+    background(0);
+    push();
+    texture(stars);
+    box(4500,4500,4500);
+    translate(0, 0, [0]);
+    pop();
 
     // HTML values being assigned to variables
     xPosValue = xPos.value;
@@ -73,7 +89,7 @@ function draw() {
 
     planetSizeValue = planetSize.value;
     sunSizeValue = sunSize.value;
-    background(0);
+    
 
 
 
