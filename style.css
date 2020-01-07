@@ -7,14 +7,14 @@
 }
 
 html {
-    height: 100vh;
     overflow: hidden;
-
 }
 
 body {
     display: flex;
     background-color: black;
+
+
 }
 
 
@@ -43,40 +43,35 @@ body {
         0 0 100px #bd30ce;
 }
 
-.menu button {
-    width: 50%;
-    height: 5vh;
-    margin: 3em 0;
-
-}
-
 .menu input {
     margin: 2vh 0 5vh 0;
 }
 
 .menu label {
-    font-size: 3vh;
+    font-size: 2.5vh;
 
 }
 
 .menu h1 {
     text-align: center;
     font-family: 'Press Start 2P';
-    margin: 5vh 2vw 2vh;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
     text-shadow: 0 0 10px #bd30ce,
         0 0 20px #01eff0;
     line-height: 2.5em;
-    letter-spacing: 1vh;
+    letter-spacing: .5vh;
 }
 
 .menu button {
-    margin: 0;
+    outline: none;
+    margin: 0 0 2vh 0;
     color: #000000;
     font-size: 1.3vw;
     width: 10vw;
     height: 7vh;
     background: #01eff0;
-    border: 2px solid#01eff0;
+    border: none;
     border-radius: 3em;
     transition: all 0.2s;
     box-shadow: 0 0 10px #01eff0,
