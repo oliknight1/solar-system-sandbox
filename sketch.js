@@ -1,10 +1,11 @@
 let planet;
 let sun;
 let force;
-let force2;
+
 
 let stars;
-let starSize = 4500;
+
+let bgAudio;
 
 
 
@@ -16,7 +17,10 @@ const img = ["images/blueP-01.jpg",
 ];
 let images;
 
+// Background music button
 
+const bgMusicBtn = document.querySelector("#music");
+bgMusicBtn.addEventListener("click", bgMusic);
 
 /* Use the const with .value when creating the planet to use the default size on the slider,
  * then use updateSizen with the let as the parameter
@@ -48,10 +52,11 @@ let divHeight = div.offsetHeight;
 document.querySelector('#reset').addEventListener("click", resetCamera)
 
 function preload() {
+    //Audio
+    bgAudio = loadSound("background-sounds.wav");
 
+    // Visuals
     stars = loadImage('img/stars.png');
-
-
     images = loadImage(random(img));
     sunImg = loadImage("images/sun-01.jpg");
 }
@@ -64,6 +69,8 @@ function setup() {
     const sketchCanvas = createCanvas(divWidth, divHeight, WEBGL);
     sketchCanvas.parent("sketch-canvas")
 
+    bgAudio.play();
+    bgAudio.loop();
 
     sun = new Sun(sunSize.value);
 
@@ -73,9 +80,10 @@ function setup() {
 
 
 function draw() {
-    background(0);
+    background(5)
+    //needs to be put on seperate class
     push();
-    texture(stars);  //needs to be put on seperate class
+    texture(stars);
     box(4500, 4500, 4500);
     translate(0, 0, [0]);
     pop();
@@ -127,9 +135,31 @@ function windowResized() {
 
 // 
 // Reset camera buttons
+
+
+// Add these as variables so they can be easily changed
 function resetCamera() {
     document.getElementById('x-position').value = 0;
     document.getElementById('y-position').value = 0;
     document.getElementById('z-position').value = 700;
 
+}
+
+
+/* If the text of the button says "Stop Music" WHEN CLICKED 
+ * then set the text to "Play Music" and stop the music
+ * and vice versa
+ */
+function bgMusic() {
+
+    if (bgMusicBtn.textContent === "Stop Music") {
+        bgMusicBtn.textContent = "Play Music"
+        bgAudio.stop();
+
+    } else {
+        bgMusicBtn.textContent = "Stop Music"
+        bgAudio.play();
+        bgAudio.loop();
+
+    }
 }
