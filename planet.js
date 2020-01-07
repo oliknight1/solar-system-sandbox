@@ -1,4 +1,6 @@
 class Planet extends Sun {
+
+
     constructor(planetR) {
         super();
         this.planetR = planetR;
@@ -6,6 +8,7 @@ class Planet extends Sun {
         this.position = createVector(0, 0, 250);
         this.velocity = createVector(2, 0, 0);
         this.acceleration = createVector(0, 0, 0);
+        this.rot = 0;
 
 
     }
@@ -29,12 +32,15 @@ class Planet extends Sun {
 
     display() {
 
-        push()
+        push();
         noStroke();
         texture(images);
         translate(this.position.x, this.position.y, this.position.z);
+        rotateY(this.rot);
         sphere(this.planetR);
-        pop()
+
+        this.rot += 0.02;
+        pop();
     }
 
 

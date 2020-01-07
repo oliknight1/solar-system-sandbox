@@ -7,7 +7,7 @@
 
 body {
     display: flex;
-    background: #1e1e1e;
+    background-color: black;
    
 
 }
@@ -17,6 +17,7 @@ body {
     display: inline-block;
     width: 80vw;
     height: 100vh;
+    
 }
 
 .menu {
@@ -33,6 +34,7 @@ body {
     align-items: center;
     font-family: 'Space Mono';
     color: #01eff0;
+    box-shadow: 0 0 20px #b9b9b9;
 }
 
 .menu button {
@@ -50,4 +52,5 @@ body {
     font-family: 'Press Start 2P';
    margin-top: 5vh;
    margin-bottom:2vh;
+   box-shadow: 0 0 20px #b9b9b9;
 }
