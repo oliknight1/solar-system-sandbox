@@ -53,7 +53,7 @@ document.querySelector('#reset').addEventListener("click", resetCamera)
 
 function preload() {
     //Audio
-    bgAudio = loadSound("background-sounds.wav");
+    bgAudio = loadSound("background-sounds.mp3");
 
     // Visuals
     stars = loadImage('img/stars.png');
