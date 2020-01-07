@@ -76,9 +76,8 @@ function setup() {
     planet = new Planet(planetSize.value);
 
     // only play when the song is loaded
-    if (bgAudio.isLoaded()) {
-        bgAudio.loop();
-    }
+
+
 
 }
 
