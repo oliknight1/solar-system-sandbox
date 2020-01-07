@@ -8,6 +8,7 @@
 
 html {
     height: 100vh;
+    overflow: hidden;
 
 }
 
@@ -25,7 +26,7 @@ body {
 }
 
 .menu {
-    height: 100vh;
+    height: 99.5vh;
     width: 20vw;
     border-radius: 0px 25px 25px 0px;
     border: 2px solid #bd30ce;
@@ -61,8 +62,7 @@ body {
 .menu h1 {
     text-align: center;
     font-family: 'Press Start 2P';
-    margin-top: 5vh;
-    margin-bottom: 2vh;
+    margin: 5vh 2vw 2vh;
     text-shadow: 0 0 10px #bd30ce,
         0 0 20px #01eff0;
     line-height: 2.5em;
