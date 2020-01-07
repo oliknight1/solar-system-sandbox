@@ -53,6 +53,7 @@ function preload() {
 
 
     images = loadImage(random(img));
+    sunImg = loadImage("images/sun-01.jpg");
 }
 
 
@@ -74,7 +75,7 @@ function setup() {
 function draw() {
     background(0);
     push();
-    texture(stars);
+    texture(stars);  //needs to be put on seperate class
     box(4500, 4500, 4500);
     translate(0, 0, [0]);
     pop();
