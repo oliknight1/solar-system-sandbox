@@ -2,19 +2,16 @@
 
 ## TO-DO
 
-### Urgent
-
 - Image for Sun (Tim)
 - Powerpoint
 - Add Moon (Oli)
 - Change planet Button (Tim)
 - Add static rotation (Tim)
 - Debug shit (Oli)
-
-### Less urgent
 - Help page (Tim)
 - Add lighting to the planets (Tyler)
 - Add planets to background (Tyler)
+- Background Sound
 
 
 
