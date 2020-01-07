@@ -54,7 +54,6 @@ document.querySelector('#reset').addEventListener("click", resetCamera)
 function preload() {
     //Audio
     bgAudio = loadSound("background-sounds.mp3");
-
     // Visuals
     stars = loadImage('img/stars.png');
     images = loadImage(random(img));
@@ -69,12 +68,17 @@ function setup() {
     const sketchCanvas = createCanvas(divWidth, divHeight, WEBGL);
     sketchCanvas.parent("sketch-canvas")
 
-    bgAudio.play();
-    bgAudio.loop();
+
+
 
     sun = new Sun(sunSize.value);
 
     planet = new Planet(planetSize.value);
+
+    // only play when the song is loaded
+    if (bgAudio.isLoaded()) {
+        bgAudio.loop();
+    }
 
 }
 
