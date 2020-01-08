@@ -1,6 +1,8 @@
 let planet;
 let sun;
-let force;
+let moon;
+let sunToPlanetForce;
+let planetToMoonForce;
 
 
 let stars;
@@ -15,6 +17,7 @@ const img = ["images/blueP-01.jpg",
     "images/greenP-01.jpg", "images/yellP-01.jpg",
     "images/cyanP-01.jpg", "images/dotP-01.jpg"
 ];
+let moonImg;
 let images;
 
 // Background music button
@@ -47,6 +50,8 @@ let divWidth = div.offsetWidth;
 let divHeight = div.offsetHeight;
 
 
+let moonSizeValue;
+
 
 // Event listener for Reset button for Camera HTML
 document.querySelector('#reset').addEventListener("click", resetCamera)
@@ -55,37 +60,27 @@ document.querySelector('#reset').addEventListener("click", resetCamera)
 const pSkin = document.querySelector("#skin");
 pSkin.addEventListener("click", changeImages);
 
-
 function preload() {
     //Audio
     bgAudio = loadSound("background-sounds.mp3");
 
-
     // Visuals
     stars = loadImage('img/stars.png');
     images = loadImage(random(img));
+
+    moonImg = loadImage("images/moon-01.jpg");
 
 }
 
 
 function setup() {
 
-
     // Add the sketch to the div 
     const sketchCanvas = createCanvas(divWidth, divHeight, WEBGL);
     sketchCanvas.parent("sketch-canvas")
-
-
-
-
     sun = new Sun(sunSize.value);
-
     planet = new Planet(planetSize.value);
-
-    // only play when the song is loaded
-
-
-
+    moon = new Moon(planetSize.value / 2);
 }
 
 
@@ -104,30 +99,33 @@ function draw() {
     zPosValue = zPos.value;
 
 
-    force = new p5.Vector();
+    sunToPlanetForce = new p5.Vector();
+    planetToMoonForce = new p5.Vector();
 
     planetSizeValue = planetSize.value;
     sunSizeValue = sunSize.value;
+    moonSizeValue = planetSize.value / 2;
 
 
 
 
 
-    force = sun.attract(planet);
+    sunToPlanetForce = sun.attract(planet);
+    planetToMoonForce = planet.attract(moon);
 
 
-    planet.applyForce(force);
-
-
-
+    planet.applyForce(sunToPlanetForce);
+    moon.applyForce(planetToMoonForce)
 
     planet.move();
-
+    moon.move();
 
     planet.updateSize(planetSizeValue);
     sun.updateSize(sunSizeValue);
+    moon.updateSize(moonSizeValue)
     sun.display();
     planet.display();
+    moon.display();
     //changes Camera parameters for  X,Y,Z 
     camera(xPosValue, yPosValue, constrain(zPosValue, sunSizeValue, 1000), 0, 0, 0, 0, 1, 0);
 }

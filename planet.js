@@ -26,8 +26,6 @@ class Planet extends Sun {
     }
     updateSize(newPlanetSize) {
         this.planetR = newPlanetSize;
-
-
         sphere(this.planetR);
     }
 
@@ -44,6 +42,3 @@ class Planet extends Sun {
     }
 
 }
-
-
-
