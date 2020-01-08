@@ -53,7 +53,7 @@ document.querySelector('#reset').addEventListener("click", resetCamera)
 
 
 const pSkin = document.querySelector("#skin");
-pSkin.addEventListener("click", images);
+pSkin.addEventListener("click", changeImages);
 
 
 function preload() {
@@ -172,4 +172,9 @@ function bgMusic() {
         bgAudio.loop();
 
     }
+}
+
+function changeImages() {
+
+    images = loadImage(random(img));
 }
