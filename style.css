@@ -55,7 +55,7 @@ body {
 .menu h1 {
     text-align: center;
     font-family: 'Press Start 2P';
-    margin: 5vh 2vh;
+    margin: 0vh 0 2vh;
     text-shadow: 0 0 10px #bd30ce,
         0 0 20px #01eff0;
     line-height: 2.5em;
