@@ -90,7 +90,7 @@ function setup() {
 
 
 function draw() {
-    background(5)
+    background(15)
     //needs to be put on seperate class
     push();
     texture(stars);

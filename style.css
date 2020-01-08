@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
-/*TITLE FONT*/
-
 @import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
-/*SLIDER HEADINGS FONT*/
-
 
 * {
     padding: 0;
@@ -16,13 +12,17 @@ html {
 
 body {
     display: flex;
-    background-color: black;
+    background-color: rgb(5, 5, 5);
+
+
 }
 
 
 #sketch-canvas {
     display: inline-block;
     width: 80vw;
+
+
 }
 
 .menu {
@@ -41,9 +41,7 @@ body {
     color: #01eff0;
     box-shadow: 0 0 20px #bd30ce,
         0 0 100px #bd30ce;
-}    /*MENU ON LEFT*/
-
-
+}
 
 .menu input {
     margin: 2vh 0 5vh 0;
@@ -51,21 +49,18 @@ body {
 
 .menu label {
     font-size: 2.5vh;
-    margin-bottom: -1vh;
 
-}   /*SLIDER HEADINGS*/
+}
 
 .menu h1 {
     text-align: center;
     font-family: 'Press Start 2P';
-    margin-top: 5vh 2vh;
-    margin-bottom: 2vh;
+    margin: 5vh 2vh;
     text-shadow: 0 0 10px #bd30ce,
         0 0 20px #01eff0;
     line-height: 2.5em;
     letter-spacing: .5vh;
-    font-size: 3.5vh;
-}   /*TITLE*/
+}
 
 .menu button {
     outline: none;
@@ -82,11 +77,11 @@ body {
         0 0 15px #01eff0;
 
 
-}  /*MENU BUTTONS*/
+}
 
 .menu button:hover {
     box-shadow: 0 0 10px #01eff0,
         0 0 15px #01eff0,
         0 0 15px #01eff0,
         0 0 25px #01eff0;
-}  /*BUTTON HOVER*/
+}
