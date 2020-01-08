@@ -10,7 +10,7 @@ let stars;
 let bgAudio;
 
 
-
+document.querySelector("#enter-btn").addEventListener("click", overlayState);
 /* Variables for images*/
 const img = ["images/blueP-01.jpg",
     "images/orenP-01.jpg", "images/whitP-01.jpg",
@@ -175,4 +175,16 @@ function bgMusic() {
 function changeImages() {
 
     images = loadImage(random(img));
+}
+
+function overlayState() {
+    const overlay = document.querySelector(".overlay");
+    const menu = document.querySelector(".menu");
+    overlay.classList.add("overlayFade");
+
+    menu.style.display = "flex";
+    div.style.visibility = "visible";
+
+
+
 }

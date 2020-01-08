@@ -19,13 +19,13 @@ body {
 
 
 #sketch-canvas {
-    display: inline-block;
+    /* Chnage display with JavaScript */
+    visibility: hidden;
     width: 80vw;
-
-
 }
 
 .menu {
+
     height: 99.5vh;
     width: 20vw;
     border-radius: 0px 25px 25px 0px;
@@ -34,6 +34,7 @@ body {
     /* Change to rgb(30, 30, 30) when p5 background is in */
     background: #3b0662;
     opacity: 80%;
+    /* This change to flex with JavaScript */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,7 +53,7 @@ body {
 
 }
 
-.menu h1 {
+h1 {
     text-align: center;
     font-family: 'Press Start 2P';
     margin: 0vh 0 2vh;
@@ -62,7 +63,7 @@ body {
     letter-spacing: .5vh;
 }
 
-.menu button {
+button {
     outline: none;
     margin: 0 0 2vh 0;
     color: #000000;
@@ -84,4 +85,42 @@ body {
         0 0 15px #01eff0,
         0 0 15px #01eff0,
         0 0 25px #01eff0;
+}
+
+/* Overlay Styling  */
+
+.overlay {
+    color: #01eff0;
+
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(10, 10, 10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+
+}
+
+
+.overlayFade {
+    animation: overlayFade 1s ease-in-out forwards;
+    opacity: 1;
+
+}
+
+@keyframes overlayFade {
+    0% {
+        opacity: 1;
+
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+
+
+    }
 }
