@@ -43,7 +43,7 @@ class Sun {
         push()
 
 
-        texture(sunImg);
+        fill(255, 150, 0);
         translate(this.position.x, this.position.y, this.position.z)
         sphere(this.sunR);
         pop()

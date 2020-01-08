@@ -8,7 +8,8 @@ class Planet extends Sun {
         this.position = createVector(0, 0, 250);
         this.velocity = createVector(2, 0, 0);
         this.acceleration = createVector(0, 0, 0);
-        this.rot = 0;
+        this.rot = 0; //setting default rotating value 
+
 
 
     }
@@ -34,14 +35,15 @@ class Planet extends Sun {
 
         push();
         noStroke();
-        texture(images);
+        texture(images); //load planet images
         translate(this.position.x, this.position.y, this.position.z);
-        rotateY(this.rot);
+        rotateY(this.rot); //rotate by the rot variable
         sphere(this.planetR);
-
-        this.rot += 0.02;
+        this.rot += 0.02; //the amount the planet rotates
         pop();
     }
 
-
 }
+
+
+
