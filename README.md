@@ -15,7 +15,7 @@
 
 
 
-## Code Explaination 
+## Code Explanation 
 
 This should hopefully clear up any confusion with the code.
 
