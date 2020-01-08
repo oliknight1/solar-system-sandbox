@@ -6,12 +6,11 @@
 - Powerpoint
 - Add Moon (Oli)
 - Change planet Button (Tim)
-- Add static rotation (Tim)
 - Debug shit (Oli)
 - Help page (Tim)
 - Add lighting to the planets (Tyler)
 - Add planets to background (Tyler)
-- Background Sound
+
 
 
 
