@@ -51,13 +51,20 @@ let divHeight = div.offsetHeight;
 // Event listener for Reset button for Camera HTML
 document.querySelector('#reset').addEventListener("click", resetCamera)
 
+
+const pSkin = document.querySelector("#skin");
+pSkin.addEventListener("click", images);
+
+
 function preload() {
     //Audio
     bgAudio = loadSound("background-sounds.mp3");
+
+
     // Visuals
     stars = loadImage('img/stars.png');
     images = loadImage(random(img));
-    sunImg = loadImage("images/sun-01.jpg");
+
 }
 
 
