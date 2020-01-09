@@ -9,7 +9,6 @@ const sunSize = document.querySelector("#sun-size");
 // Sliders for camera position
 const xPos = document.querySelector("#x-position");
 const yPos = document.querySelector("#y-position");
-const zPos = document.querySelector("#z-position");
 
 // Getting the div that the sketch is inside
 const div = document.querySelector("#sketch-canvas");
@@ -69,19 +68,28 @@ let planetImg;
 let moonSizeValue;
 
 // Variables for the default position of the camera
-const camXdefaultPos = 0;
-const camYdefaultPos = 0;
-const camZdefaultPos = 700;
+const camXDefaultPos = 0;
+const camYDefaultPos = 0;
+const camZDefaultPos = 600;
 
 // Variables for the position of the camera
 let camXPos;
 let camYPos;
-let camZPos;
 
 // Width and height of the div that the sketch is inside
 // Allows the sketch to be the height and width of that div
 let divWidth = div.offsetWidth;
 let divHeight = div.offsetHeight;
+
+
+// Function for adding the stars to the background
+function addBackground() {
+    push();
+    texture(stars);
+    box(4500, 4500, 4500);
+    pop();
+}
+
 
 function preload() {
     // Preload the background audio
@@ -152,24 +160,17 @@ function draw() {
 
 
     //changes camera parameters for  X,Y,Z 
-    camera(xPos.value, yPos.value, constrain(zPos.value, sunSize.value, 1000), 0, 0, 0, 0, 1, 0);
+    camera(xPos.value, yPos.value, camZDefaultPos, 0, 0, 0, 0, 1, 0);
 }
 
-// Function for adding the stars to the background
-function addBackground() {
-    push();
-    texture(stars);
-    box(4500, 4500, 4500);
-    pop();
-}
+
+
 // Event Listener Functions
 
 // Resets the position of the camera to default 
 function resetCamera() {
-    xPos.value = camXdefaultPos;
-    yPos.value = camYdefaultPos;
-    zPos.value = camZdefaultPos;
-
+    xPos.value = camXDefaultPos;
+    yPos.value = camYDefaultPos;
 }
 
 
@@ -217,6 +218,4 @@ function overlayState() {
     overlay.classList.add("overlayFade");
     menu.classList.add("fadeIn");
     div.classList.add("fadeIn");
-
-
 }
