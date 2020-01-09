@@ -1,6 +1,4 @@
 class Planet extends Sun {
-
-
     constructor(planetR) {
         super();
         this.planetR = planetR;
@@ -9,10 +7,9 @@ class Planet extends Sun {
         this.velocity = createVector(2, 0, 0);
         this.acceleration = createVector(0, 0, 0);
         this.rot = 0; //setting default rotating value 
-
-
-
     }
+
+    // Apply the force recvieved as the parameter to the acceleration
     applyForce(force) {
         force = p5.Vector.div(force, this.mass)
         this.acceleration.add(force)
@@ -21,16 +18,15 @@ class Planet extends Sun {
         this.velocity.add(this.acceleration);
         this.position.add(this.velocity);
         this.acceleration.mult(0); // reset acceleration
-
-
     }
+
+    // Update the size of the planet with the latest value from the slider
     updateSize(newPlanetSize) {
         this.planetR = newPlanetSize;
         sphere(this.planetR);
     }
 
     display() {
-
         push();
         noStroke();
         texture(planetImg); //load planet images
