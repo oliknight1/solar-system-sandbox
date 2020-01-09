@@ -114,13 +114,9 @@ function setup() {
 
 function draw() {
     background(15)
-    //needs to be put on seperate class
-    push();
-    texture(stars);
-    box(4500, 4500, 4500);
-    translate(0, 0, [0]);
-    pop();
 
+    // Add the stars background
+    addBackground();
 
     // The forces of the gravitational pull
     sunToPlanetForce = new p5.Vector();
@@ -159,6 +155,13 @@ function draw() {
     camera(xPos.value, yPos.value, constrain(zPos.value, sunSize.value, 1000), 0, 0, 0, 0, 1, 0);
 }
 
+// Function for adding the stars to the background
+function addBackground() {
+    push();
+    texture(stars);
+    box(4500, 4500, 4500);
+    pop();
+}
 // Event Listener Functions
 
 // Resets the position of the camera to default 
