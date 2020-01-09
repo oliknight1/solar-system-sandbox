@@ -20,7 +20,7 @@ body {
 
 #sketch-canvas {
     /* Chnage display with JavaScript */
-    visibility: hidden;
+    opacity: 0;
     width: 80vw;
 }
 
@@ -33,7 +33,7 @@ body {
 
     /* Change to rgb(30, 30, 30) when p5 background is in */
     background: #3b0662;
-    opacity: 80%;
+    opacity: 0;
     /* This change to flex with JavaScript */
     display: flex;
     flex-direction: column;
@@ -42,6 +42,14 @@ body {
     color: #01eff0;
     box-shadow: 0 0 20px #bd30ce,
         0 0 100px #bd30ce;
+
+    /* allows the box shadow to be displayed over the div */
+    z-index: 1;
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out forwards;
+
 }
 
 .menu input {
@@ -101,17 +109,17 @@ button {
     align-items: center;
     flex-direction: column;
     z-index: 1;
-
+    animation: fadeIn 1s ease-in-out;
 }
 
 
 .overlayFade {
-    animation: overlayFade 1s ease-in-out forwards;
+    animation: fadeOut 1s ease-in-out forwards;
     opacity: 1;
 
 }
 
-@keyframes overlayFade {
+@keyframes fadeOut {
     0% {
         opacity: 1;
 
@@ -120,6 +128,20 @@ button {
     100% {
         opacity: 0;
         pointer-events: none;
+
+
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+
 
 
     }
