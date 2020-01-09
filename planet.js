@@ -33,7 +33,7 @@ class Planet extends Sun {
 
         push();
         noStroke();
-        texture(images); //load planet images
+        texture(planetImg); //load planet images
         translate(this.position.x, this.position.y, this.position.z);
         rotateY(this.rot); //rotate by the rot variable
         sphere(this.planetR);
