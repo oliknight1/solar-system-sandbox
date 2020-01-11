@@ -54,12 +54,10 @@ const imgArray = ["images/blueP-01.jpg",
     "images/greenP-01.jpg", "images/yellP-01.jpg",
     "images/cyanP-01.jpg", "images/dotP-01.jpg"
 ];
-<<<<<<< HEAD
+
 let moonImg;
 let images;
 let sunImg;
-=======
->>>>>>> 58dd4981a99dce1a4583037198420a69cae65808
 
 // Random number for creating the planets
 let randomPlanet;
@@ -107,13 +105,12 @@ function preload() {
     // Preload a random planet from the imgArray
     randomPlanet = random(imgArray);
 
-<<<<<<< HEAD
+
     sunImg = loadImage("images/sun-01.jpg");
 
-}
-=======
+
     planetImg = loadImage(randomPlanet);
->>>>>>> 58dd4981a99dce1a4583037198420a69cae65808
+
 
 }
 

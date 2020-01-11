@@ -42,16 +42,15 @@ class Sun {
     }
     display() {
         noStroke();
-<<<<<<< HEAD
+
         texture(sunImg);
         push()
 
 
 
-=======
+
         push()
         fill(255, 150, 0);
->>>>>>> 58dd4981a99dce1a4583037198420a69cae65808
         translate(this.position.x, this.position.y, this.position.z)
         sphere(this.sunR);
         pop()
