@@ -21,13 +21,13 @@ body {
 
 
 #sketch-canvas {
-    display: inline-block;
+    /* Chnage display with JavaScript */
+    opacity: 0;
     width: 80vw;
-
-
 }
 
 .menu {
+
     height: 99.5vh;
     width: 20vw;
     border-radius: 0px 25px 25px 0px;
@@ -35,7 +35,8 @@ body {
 
     /* Change to rgb(30, 30, 30) when p5 background is in */
     background: #3b0662;
-    opacity: 80%;
+    opacity: 0;
+    /* This change to flex with JavaScript */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,6 +44,14 @@ body {
     color: #01eff0;
     box-shadow: 0 0 20px #bd30ce,
         0 0 100px #bd30ce;
+
+    /* allows the box shadow to be displayed over the div */
+    z-index: 1;
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out forwards;
+
 }
 
 .menu input {
@@ -55,7 +64,7 @@ body {
 
 }
 
-.menu h1 {
+h1 {
     text-align: center;
     font-family: 'Audiowide';
     margin: 0vh 0 2vh;
@@ -65,7 +74,7 @@ body {
     letter-spacing: .5vh;
 }
 
-.menu button {
+button {
     outline: none;
     margin: 0 0 2vh 0;
     color: #000000;
@@ -87,4 +96,56 @@ body {
         0 0 15px #01eff0,
         0 0 15px #01eff0,
         0 0 25px #01eff0;
+}
+
+/* Overlay Styling  */
+
+.overlay {
+    color: #01eff0;
+
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(10, 10, 10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+.overlayFade {
+    animation: fadeOut 1s ease-in-out forwards;
+    opacity: 1;
+
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+
+
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+
+
+
+    }
 }

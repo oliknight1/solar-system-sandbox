@@ -33,22 +33,28 @@ class Sun {
         // return force so it can but used in the applyForce() method of Mover
         return force;
     }
+
+    // Update the size of the sun with the latest value from the slider
+
     updateSize(newSunSize) {
         this.sunR = newSunSize;
         sphere(this.sunR)
     }
     display() {
         noStroke();
+<<<<<<< HEAD
         texture(sunImg);
         push()
 
 
 
+=======
+        push()
+        fill(255, 150, 0);
+>>>>>>> 58dd4981a99dce1a4583037198420a69cae65808
         translate(this.position.x, this.position.y, this.position.z)
         sphere(this.sunR);
         pop()
     }
-    getSunR() {
-        return this.sunR;
-    }
+
 }
