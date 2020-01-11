@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -45,6 +47,7 @@ body {
 
 .menu input {
     margin: 2vh 0 5vh 0;
+    margin-top: -0.2vh;
 }
 
 .menu label {
@@ -54,11 +57,11 @@ body {
 
 .menu h1 {
     text-align: center;
-    font-family: 'Press Start 2P';
+    font-family: 'Audiowide';
     margin: 0vh 0 2vh;
     text-shadow: 0 0 10px #bd30ce,
         0 0 20px #01eff0;
-    line-height: 2.5em;
+    line-height: 1.5em;
     letter-spacing: .5vh;
 }
 

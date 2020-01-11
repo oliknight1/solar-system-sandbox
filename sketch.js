@@ -19,6 +19,7 @@ const img = ["images/blueP-01.jpg",
 ];
 let moonImg;
 let images;
+let sunImg;
 
 // Background music button
 
@@ -69,6 +70,8 @@ function preload() {
     images = loadImage(random(img));
 
     moonImg = loadImage("images/moon-01.jpg");
+
+    sunImg = loadImage("images/sun-01.jpg");
 
 }
 
