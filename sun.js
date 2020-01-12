@@ -37,23 +37,22 @@ class Sun {
     // Update the size of the sun with the latest value from the slider
 
     updateSize(newSunSize) {
-        this.sunR = newSunSize;
+        this.sunR = newgitSunSize;
         sphere(this.sunR)
     }
     display() {
+
+        
         noStroke();
 
         texture(sunImg);
-        push()
 
-
-
-
-        push()
-
+        push();
         translate(this.position.x, this.position.y, this.position.z)
+        ambientLight(200);
+        directionalLight(200, 200, 200, -xPos.value/100, -yPos.value/100, -5 );
         sphere(this.sunR);
-        pop()
+        pop();
     }
 
 }

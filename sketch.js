@@ -10,6 +10,7 @@ const sunSize = document.querySelector("#sun-size");
 const xPos = document.querySelector("#x-position");
 const yPos = document.querySelector("#y-position");
 
+
 // Getting the div that the sketch is inside
 const div = document.querySelector("#sketch-canvas");
 
@@ -96,7 +97,7 @@ function preload() {
     bgAudio = loadSound("background-sounds.mp3");
 
     // Preload the star background
-    stars = loadImage('img/stars.png');
+    stars = loadImage('images/stars.png');
 
     // Preload a random planet from the imgArray
     randomPlanet = random(imgArray);
