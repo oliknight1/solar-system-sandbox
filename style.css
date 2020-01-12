@@ -93,18 +93,18 @@ button {
 
 }
 
-.menu button:hover {
+button:hover {
     box-shadow: 0 0 10px #01eff0,
         0 0 15px #01eff0,
         0 0 15px #01eff0,
         0 0 25px #01eff0;
+       cursor: pointer;
 }
 
 /* Overlay Styling  */
 
 .overlay {
     color: #01eff0;
-
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -124,7 +124,7 @@ button {
 
 }
 
-.splash {
+.splash-container {
     height: 90vh;
     width: 70vw;
     border-radius: 25px 25px 25px 25px;
@@ -145,7 +145,7 @@ button {
     z-index: 1;
 }
 
-#enter-btn {
+.overlay-btn {
     font-size: 5vh;
     margin-top: 3vh;
     font-family: 'Space Mono';
@@ -153,18 +153,12 @@ button {
     height: 12vh;
 }
 
-#enter-btn:hover {
-    box-shadow: 0 0 10px #01eff0,
-        0 0 15px #01eff0,
-        0 0 15px #01eff0,
-        0 0 25px #01eff0;
-}
 
 #title {
     margin-top: 5vh;
 }
 
-#help {
+#help-container {
     height:24vh;
     width: 90vh;
     margin-top: 4vh;
@@ -174,12 +168,12 @@ button {
     font-size: 4vh;
 }
 
-#helpCont {
+#help-text{
     font-size: 2vh;
 
 }
 
-.us {
+.creator-profile {
     height:80vh;
     width: 35vh;
     margin-top: 4vh;
