@@ -102,7 +102,7 @@ function preload() {
     randomPlanet = random(imgArray);
 
     planetImg = loadImage(randomPlanet);
-
+    sunImg = loadImage("images/sun-01.jpg");
 }
 
 function setup() {

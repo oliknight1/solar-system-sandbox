@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -54,6 +56,7 @@ body {
 
 .menu input {
     margin: 2vh 0 5vh 0;
+    margin-top: -0.2vh;
 }
 
 .menu label {
@@ -63,11 +66,12 @@ body {
 
 h1 {
     text-align: center;
-    font-family: 'Press Start 2P';
+    font-family: 'Audiowide';
     margin: 0vh 0 2vh;
+ 
     text-shadow: 0 0 10px #bd30ce,
         0 0 20px #01eff0;
-    line-height: 2.5em;
+    line-height: 1.5em;
     letter-spacing: .5vh;
 }
 
@@ -75,7 +79,7 @@ button {
     outline: none;
     margin: 0 0 2vh 0;
     color: #000000;
-    font-size: 1.3vw;
+    font-size: 1.1vw;
     width: 10vw;
     height: 7vh;
     background: #01eff0;
@@ -84,6 +88,7 @@ button {
     transition: all 0.2s;
     box-shadow: 0 0 10px #01eff0,
         0 0 15px #01eff0;
+    font-family: 'Space Mono';
 
 
 }
@@ -118,6 +123,74 @@ button {
     opacity: 1;
 
 }
+
+.splash {
+    height: 90vh;
+    width: 70vw;
+    border-radius: 25px 25px 25px 25px;
+    border: 2px solid #bd30ce;
+    font-size: 5.5vh;
+    /* Change to rgb(30, 30, 30) when p5 background is in */
+    background: #3b0662;
+    font-size: 5vh;
+    font-family: 'Space Mono';
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 20px #bd30ce,
+        0 0 100px #bd30ce;
+
+    /* allows the box shadow to be displayed over the div */
+    z-index: 1;
+}
+
+#enter-btn {
+    font-size: 5vh;
+    margin-top: 3vh;
+    font-family: 'Space Mono';
+    width: 18vw;
+    height: 12vh;
+}
+
+#enter-btn:hover {
+    box-shadow: 0 0 10px #01eff0,
+        0 0 15px #01eff0,
+        0 0 15px #01eff0,
+        0 0 25px #01eff0;
+}
+
+#title {
+    margin-top: 5vh;
+}
+
+#help {
+    height:24vh;
+    width: 90vh;
+    margin-top: 4vh;
+    border-radius: 25px 25px 25px 25px;
+    border: 2px solid #bd30ce;
+    text-align: center;
+    font-size: 4vh;
+}
+
+#helpCont {
+    font-size: 2vh;
+
+}
+
+.us {
+    height:80vh;
+    width: 35vh;
+    margin-top: 4vh;
+    border-radius: 25px 25px 25px 25px;
+    border: 2px solid #bd30ce;
+    text-align: center;
+    font-size: 4vh;
+    align-content: left;
+}
+
+
 
 @keyframes fadeOut {
     0% {
