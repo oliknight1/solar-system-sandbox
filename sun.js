@@ -37,7 +37,7 @@ class Sun {
     // Update the size of the sun with the latest value from the slider
 
     updateSize(newSunSize) {
-        this.sunR = newgitSunSize;
+        this.sunR = newSunSize;
         sphere(this.sunR)
     }
     display() {
