@@ -6,6 +6,9 @@ const planetSize = document.querySelector("#planet-size");
 // Slider for the size of the sun 
 const sunSize = document.querySelector("#sun-size");
 
+// Slider for the strength of the gravity 
+
+
 // Sliders for camera position
 const xPos = document.querySelector("#x-position");
 const yPos = document.querySelector("#y-position");
@@ -132,6 +135,9 @@ function draw() {
 
     // Setting the size of the moon to always be half the size of the planet
     moonSizeValue = planetSize.value / 2;
+
+
+    // Change the gravity strength
 
     // sunToPlanetForce is initialized as the strengh of the force that is pulling the planet to the sun 
     sunToPlanetForce = sun.attract(planet);
