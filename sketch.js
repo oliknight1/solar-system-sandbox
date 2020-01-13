@@ -1,17 +1,18 @@
 // Finding HTML DOM elements
 
-// Slider for the size of the planet
+// Sliders for changing object size
 const planetSize = document.querySelector("#planet-size");
-
-// Slider for the size of the sun 
 const sunSize = document.querySelector("#sun-size");
-
-// Slider for the strength of the gravity 
-
 
 // Sliders for camera position
 const xPos = document.querySelector("#x-position");
 const yPos = document.querySelector("#y-position");
+
+// P tags for displaying value of sliders 
+const planetSizeValue = document.querySelector("#planet-size-value");
+const sunSizeValue = document.querySelector("#sun-size-value");
+const xPosValue = document.querySelector("#xpos-value");
+const yPosValue = document.querySelector("#ypos-value");
 
 // Getting the div that the sketch is inside
 const div = document.querySelector("#sketch-canvas");
@@ -129,6 +130,8 @@ function draw() {
     // Add the stars background
     addBackground();
 
+    // Display value of sliders
+    displayValue()
     // The forces of the gravitational pull
     sunToPlanetForce = new p5.Vector();
     //planetToMoonForce = new p5.Vector();
@@ -224,4 +227,11 @@ function overlayState() {
     overlay.classList.add("overlayFade");
     menu.classList.add("fadeIn");
     div.classList.add("fadeIn");
+}
+
+function displayValue() {
+    sunSizeValue.textContent = sunSize.value;
+    planetSizeValue.textContent = planetSize.value;
+    xPosValue.textContent = xPos.value;
+    yPosValue.textContent = yPos.value;
 }
