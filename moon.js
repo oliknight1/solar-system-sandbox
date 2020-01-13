@@ -2,7 +2,8 @@ class Moon extends Planet {
     constructor(moonR) {
         super();
         this.moonR = moonR;
-        this.position = createVector(0, 0, 350);
+
+        this.position = createVector(0, 0, 450);
         this.velocity = createVector(10, 0, 0);
         this.moonImg = loadImage("images/moon-01.jpg");
 

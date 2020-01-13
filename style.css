@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
 
 @import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -61,6 +62,7 @@ body {
 
 .menu label {
     font-size: 2.5vh;
+    margin: 1vh;
 
 }
 
@@ -68,7 +70,7 @@ h1 {
     text-align: center;
     font-family: 'Audiowide';
     margin: 0vh 0 2vh;
- 
+
     text-shadow: 0 0 10px #bd30ce,
         0 0 20px #01eff0;
     line-height: 1.5em;
@@ -98,7 +100,7 @@ button:hover {
         0 0 15px #01eff0,
         0 0 15px #01eff0,
         0 0 25px #01eff0;
-       cursor: pointer;
+    cursor: pointer;
 }
 
 /* Overlay Styling  */
@@ -159,7 +161,7 @@ button:hover {
 }
 
 #help-container {
-    height:24vh;
+    height: 24vh;
     width: 90vh;
     margin-top: 4vh;
     border-radius: 25px 25px 25px 25px;
@@ -168,13 +170,13 @@ button:hover {
     font-size: 4vh;
 }
 
-#help-text{
+#help-text {
     font-size: 2vh;
 
 }
 
 .creator-profile {
-    height:80vh;
+    height: 80vh;
     width: 35vh;
     margin-top: 4vh;
     border-radius: 25px 25px 25px 25px;
