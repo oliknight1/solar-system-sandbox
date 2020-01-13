@@ -70,7 +70,7 @@ body {
 h1 {
     text-align: center;
     font-family: 'Audiowide';
-    margin: 0vh 0 2vh;
+    margin: 2vh 0 2vh;
 
     text-shadow: 0 0 10px #bd30ce,
         0 0 20px #01eff0;
@@ -223,4 +223,80 @@ button:hover {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.help-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.help-btn-container button {
+    background-color: transparent;
+    width: 7vh;
+    height: 7vh;
+    border-radius: 100%;
+    font-size: 5vh;
+    text-align: center;
+    margin-right: 1vw;
+    color: white;
+    box-shadow: 0 0 10px #01eff0,
+        0 0 15px #01eff0;
+    transition: all .1s ease-in-out;
+
+}
+
+.help-btn-container button:hover {
+    background-color: #01eff0;
+    color: #000000;
+    animation: shake 1s ease-in-out;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(-23deg);
+    }
+
+    25% {
+        transform: rotate(23deg);
+    }
+
+    50% {
+        transform: rotate(-23deg);
+    }
+
+    75% {
+        transform: rotate(23deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.help-btn-container button:active {
+    box-shadow: 0 0 10px #01eff0,
+        0 0 15px #01eff0,
+        inset 0 0 20px #000000;
+    transform: scale(.8);
+}
+
+.help-popup {
+    opacity: 0;
+    background-color: #3b0662;
+    border: 2px solid #bd30ce;
+    box-shadow: 0 0 20px #bd30ce,
+        0 0 100px #bd30ce;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 5vh;
+    left: 23vw;
+    height: fit-content;
+    width: 20vw;
+    transition: opacity 1s ease-in-out;
+}
+
+.help-popup p {
+    margin: 1em;
+
 }
