@@ -14,6 +14,10 @@ const sunSizeValue = document.querySelector("#sun-size-value");
 const xPosValue = document.querySelector("#xpos-value");
 const yPosValue = document.querySelector("#ypos-value");
 
+//  pop up box
+const popUp = document.querySelector(".help-popup");
+
+
 // Getting the div that the sketch is inside
 const div = document.querySelector("#sketch-canvas");
 
@@ -33,6 +37,7 @@ enterBtn.addEventListener("click", overlayState);
 bgMusicBtn.addEventListener("click", bgMusic);
 resetBtn.addEventListener("click", resetCamera);
 changeSkinBtn.addEventListener("click", changeImages);
+document.querySelector("#help-btn").addEventListener("click", popUpState);
 
 
 // Global Varibales
@@ -229,9 +234,27 @@ function overlayState() {
     div.classList.add("fadeIn");
 }
 
+// Sets the updated value of the sliders to the <p> tag
 function displayValue() {
     sunSizeValue.textContent = sunSize.value;
     planetSizeValue.textContent = planetSize.value;
     xPosValue.textContent = xPos.value;
     yPosValue.textContent = yPos.value;
+}
+// Controls if the pop up box appears or not
+
+// Helps decide if the pop up box needs to be opened or closed
+let isOpen = false;
+
+function popUpState() {
+
+
+    if (!isOpen) {
+        popUp.style.opacity = "1"
+        isOpen = true;
+    } else {
+        popUp.style.opacity = "0"
+        isOpen = false;
+        console.log(false);
+    }
 }
