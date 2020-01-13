@@ -36,27 +36,42 @@
       GALAXY ENGINEER
     </h1>
 
+    <div class="input">
+      <label for="planet-size">
+        PLANET SIZE
+      </label>
 
-    <label for="planet-size">
-      PLANET SIZE
-    </label>
-    <input type="range" name="planet-size" id="planet-size" min="10" max="55" value="30">
+      <input type="range" name="planet-size" id="planet-size" min="10" max="55" value="30">
+      <p id="planet-size-value">30</p>
+    </div>
 
-    <label for="sun-size">
-      SUN SIZE
-    </label>
-    <input type="range" name="sun-size" id="sun-size" min="80" max="120" value="80">
+    <div class="input">
+      <label for="sun-size">
+        SUN SIZE
+      </label>
+      <input type="range" name="sun-size" id="sun-size" min="80" max="120" value="80">
+      <p id="sun-size-value">80</p>
 
-    <label for="x-position">
-      X POSITION
-    </label>
-    <input type="range" name="x-position" id="x-position" min="-1000" max="1000" value="0">
+    </div>
 
-    <label for="y-position">
-      Y POSITION
-    </label>
-    <input type="range" name="y-position" id="y-position" min="-700" max="700" value="0">
+    <div class="input">
+      <label for="x-position">
+        X POSITION
+      </label>
+      <input type="range" name="x-position" id="x-position" min="-1000" max="1000" value="0">
+      <p id="xpos-value">0</p>
 
+    </div>
+
+    <div class="input">
+
+      <label for="y-position">
+        Y POSITION
+      </label>
+      <input type="range" name="y-position" id="y-position" min="-700" max="700" value="0">
+      <p id="ypos-value"> 0</p>
+
+    </div>
     <!-- Buttons -->
     <button id="reset">Reset Camera </button>
     <button id="music">Play Music</button>

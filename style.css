@@ -33,13 +33,13 @@ body {
     width: 20vw;
     border-radius: 0px 25px 25px 0px;
     border: 2px solid #bd30ce;
-
     /* Change to rgb(30, 30, 30) when p5 background is in */
     background: #3b0662;
     opacity: 0;
     /* This change to flex with JavaScript */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     font-family: 'Space Mono';
     color: #01eff0;
@@ -55,15 +55,16 @@ body {
 
 }
 
-.menu input {
-    margin: 2vh 0 5vh 0;
-    margin-top: -0.2vh;
-}
+
 
 .menu label {
     font-size: 2.5vh;
-    margin: 1vh;
 
+
+}
+
+.values {
+    margin: 0;
 }
 
 h1 {
@@ -214,4 +215,12 @@ button:hover {
 
 
     }
+}
+
+.input {
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
