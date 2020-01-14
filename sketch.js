@@ -9,7 +9,6 @@ const xPos = document.querySelector("#x-position");
 const yPos = document.querySelector("#y-position");
 
 
-=======
 // P tags for displaying value of sliders 
 const planetSizeValue = document.querySelector("#planet-size-value");
 const sunSizeValue = document.querySelector("#sun-size-value");
