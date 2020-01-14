@@ -108,7 +108,7 @@ function preload() {
     randomPlanet = random(imgArray);
 
     planetImg = loadImage(randomPlanet);
-    sunImg = loadImage("images/sun-01.jpg");
+    sunImg = loadImage("images/sun.jpg");
 }
 
 // Function for adding the stars to the background
