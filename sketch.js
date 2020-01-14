@@ -99,7 +99,7 @@ function preload() {
     bgAudio = loadSound("background-sounds.mp3");
 
     // Preload the star background
-    stars = loadImage('img/stars.png');
+    stars = loadImage('images/stars.png');
 
     // Preload a random planet from the imgArray
     randomPlanet = random(imgArray);
