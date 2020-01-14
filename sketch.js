@@ -38,6 +38,7 @@ changeSkinBtn.addEventListener("click", changeImages);
 let planet;
 let sun;
 let moon;
+let nav;
 
 // Variables for the forces
 let sunToPlanetForce;
@@ -68,14 +69,9 @@ let planetImg;
  */
 let moonSizeValue;
 
-// Variables for the default position of the camera
-const camXDefaultPos = 0;
-const camYDefaultPos = 0;
-const camZDefaultPos = 600;
-
-// Variables for the position of the camera
-let camXPos;
-let camYPos;
+// Variables for the default position of the camera (For Reset Button)
+        let camXDefaultPos = 0;
+        let camYDefaultPos = 0;
 
 // Width and height of the div that the sketch is inside
 // Allows the sketch to be the height and width of that div
@@ -111,13 +107,17 @@ function setup() {
     // Creates a canvas the size of the div
     const sketchCanvas = createCanvas(divWidth, divHeight, WEBGL);
 
-    // Set the parent of the cavas to the div
+    // Set the parent of the canvas to the div
     sketchCanvas.parent("sketch-canvas");
 
     // Initializing the objects
     sun = new Sun(sunSize.value);
     planet = new Planet(planetSize.value);
     moon = new Moon(planetSize.value / 2);
+
+    // Initializing Camera 
+    nav = new Nav(xPos.value,yPos.value);
+
 }
 
 
@@ -148,24 +148,25 @@ function draw() {
     // move() controls the movement of the object
     planet.move();
     moon.move();
+    
 
     // updateSize() changes the size of the planets based upon the sliders
     planet.updateSize(planetSize.value);
     sun.updateSize(sunSize.value);
     moon.updateSize(moonSizeValue);
 
+    // updatePos() changes the postition of the Camera based upon the sliders
+    nav.updatePos(xPos.value,yPos.value);
+    
+
     // Displays the objects, this needs to be the last function applied to the objects
     sun.display();
     planet.display();
     moon.display();
 
-
-    //changes camera parameters for  X,Y,Z 
-    camera(xPos.value, yPos.value, camZDefaultPos, 0, 0, 0, 0, 1, 0);
-}
-
-
-
+    // Displays Camera
+    nav.display();
+   
 // Event Listener Functions
 
 // Resets the position of the camera to default 
@@ -219,4 +220,5 @@ function overlayState() {
     overlay.classList.add("overlayFade");
     menu.classList.add("fadeIn");
     div.classList.add("fadeIn");
+}
 }

@@ -9,7 +9,7 @@ class Planet extends Sun {
         this.rot = 0; //setting default rotating value 
     }
 
-    // Apply the force recvieved as the parameter to the acceleration
+    // Apply the force recieved as the parameter to the acceleration
     applyForce(force) {
         force = p5.Vector.div(force, this.mass)
         this.acceleration.add(force)
