@@ -46,13 +46,21 @@ class Sun {
         sphere(this.sunR)
     }
     display() {
+
+        
         noStroke();
 
         texture(sunImg);
+
+
+     
+
         push()
         translate(this.position.x, this.position.y, this.position.z)
+        ambientLight(200);
+        directionalLight(200, 200, 200, -xPos.value/100, -yPos.value/100, -5 );
         sphere(this.sunR);
-        pop()
+        pop();
     }
 
 

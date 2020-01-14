@@ -31,8 +31,12 @@ class Planet extends Sun {
     }
 
     display() {
+        pointLight(255,255,255, 0, 0, 0);
+        ambientLight(100);
+
         push();
         noStroke();
+        
         texture(planetImg); //load planet images
         translate(this.position.x, this.position.y, this.position.z);
         rotateY(this.rot); //rotate by the rot variable
