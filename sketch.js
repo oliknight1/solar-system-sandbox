@@ -92,13 +92,6 @@ let divWidth = div.offsetWidth;
 let divHeight = div.offsetHeight;
 
 
-// Function for adding the stars to the background
-function addBackground() {
-    push();
-    texture(stars);
-    box(4500, 4500, 4500);
-    pop();
-}
 
 
 function preload() {
@@ -113,6 +106,14 @@ function preload() {
 
     planetImg = loadImage(randomPlanet);
     sunImg = loadImage("images/sun-01.jpg");
+}
+
+// Function for adding the stars to the background
+function addBackground() {
+    push();
+    texture(stars);
+    box(4500, 4500, 4500);
+    pop();
 }
 
 function setup() {
