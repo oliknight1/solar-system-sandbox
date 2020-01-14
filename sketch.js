@@ -47,6 +47,7 @@ document.querySelector("#help-btn").addEventListener("click", popUpState);
 let planet;
 let sun;
 let moon;
+let cam;
 
 // Variables for the forces
 let sunToPlanetForce;
@@ -128,6 +129,9 @@ function setup() {
     sun = new Sun(sunSize.value);
     planet = new Planet(planetSize.value);
     moon = new Moon(planetSize.value / 2);
+
+    // Initializing Camera 
+    cam = new Cam(xPos.value, yPos.value);
 }
 
 
@@ -169,14 +173,18 @@ function draw() {
     sun.updateSize(sunSize.value);
     moon.updateSize(moonSizeValue);
 
+    // updatePos() changes the postition of the Camera based upon the sliders
+    cam.updatePos(xPos.value, yPos.value);
+
     // Displays the objects, this needs to be the last function applied to the objects
     sun.display();
     planet.display();
     moon.display();
 
+    // Displays Camera
+    cam.display();
 
-    //changes camera parameters for  X,Y,Z 
-    camera(xPos.value, yPos.value, camZDefaultPos, 0, 0, 0, 0, 1, 0);
+
 }
 
 
