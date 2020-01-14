@@ -34,6 +34,7 @@ const changeSkinBtn = document.querySelector("#skin-btn");
 
 // Event Listeners
 enterBtn.addEventListener("click", overlayState);
+enterBtn.addEventListener("click", bgMusic);
 bgMusicBtn.addEventListener("click", bgMusic);
 resetBtn.addEventListener("click", resetCamera);
 changeSkinBtn.addEventListener("click", changeImages);
