@@ -1,15 +1,16 @@
 class Sun {
     constructor(sunR) {
         this.sunR = sunR;
-        this.mass = sunR * 10;
+        this.mass = this.sunR * 10;
 
         /* gravitational constant for equation
          * the actual number is 6.674 * Math.pow(10, -11), but doesn't need to be exact
          * might want to mess around with using the specific number though */
-        this.G = 1
+        this.G = 2
         this.position = createVector(0, 0, 0);
 
     }
+
     // this function is what creates the gravitational pull
     attract(p) {
         // this gets the direction of the force
@@ -30,6 +31,8 @@ class Sun {
 
 
         force.mult(strength);
+        console.log(p.mass);
+
         // return force so it can but used in the applyForce() method of Mover
         return force;
     }
@@ -38,6 +41,8 @@ class Sun {
 
     updateSize(newSunSize) {
         this.sunR = newSunSize;
+        this.mass = this.sunR * 10;
+
         sphere(this.sunR)
     }
     display() {
@@ -47,12 +52,16 @@ class Sun {
 
         texture(sunImg);
 
-        push();
+
+     
+
+        push()
         translate(this.position.x, this.position.y, this.position.z)
         ambientLight(200);
         directionalLight(200, 200, 200, -xPos.value/100, -yPos.value/100, -5 );
         sphere(this.sunR);
         pop();
     }
+
 
 }

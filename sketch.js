@@ -1,14 +1,24 @@
 // Finding HTML DOM elements
 
-// Slider for the size of the planet
+// Sliders for changing object size
 const planetSize = document.querySelector("#planet-size");
-
-// Slider for the size of the sun 
 const sunSize = document.querySelector("#sun-size");
 
 // Sliders for camera position
 const xPos = document.querySelector("#x-position");
 const yPos = document.querySelector("#y-position");
+
+
+=======
+// P tags for displaying value of sliders 
+const planetSizeValue = document.querySelector("#planet-size-value");
+const sunSizeValue = document.querySelector("#sun-size-value");
+const xPosValue = document.querySelector("#xpos-value");
+const yPosValue = document.querySelector("#ypos-value");
+
+//  pop up box
+const popUp = document.querySelector(".help-popup");
+
 
 
 // Getting the div that the sketch is inside
@@ -27,9 +37,11 @@ const changeSkinBtn = document.querySelector("#skin-btn");
 
 // Event Listeners
 enterBtn.addEventListener("click", overlayState);
+enterBtn.addEventListener("click", bgMusic);
 bgMusicBtn.addEventListener("click", bgMusic);
 resetBtn.addEventListener("click", resetCamera);
 changeSkinBtn.addEventListener("click", changeImages);
+document.querySelector("#help-btn").addEventListener("click", popUpState);
 
 
 // Global Varibales
@@ -38,6 +50,7 @@ changeSkinBtn.addEventListener("click", changeImages);
 let planet;
 let sun;
 let moon;
+let cam;
 
 // Variables for the forces
 let sunToPlanetForce;
@@ -83,13 +96,6 @@ let divWidth = div.offsetWidth;
 let divHeight = div.offsetHeight;
 
 
-// Function for adding the stars to the background
-function addBackground() {
-    push();
-    texture(stars);
-    box(4500, 4500, 4500);
-    pop();
-}
 
 
 function preload() {
@@ -106,6 +112,14 @@ function preload() {
     sunImg = loadImage("images/sun-01.jpg");
 }
 
+// Function for adding the stars to the background
+function addBackground() {
+    push();
+    texture(stars);
+    box(4500, 4500, 4500);
+    pop();
+}
+
 function setup() {
 
     // Creates a canvas the size of the div
@@ -118,6 +132,9 @@ function setup() {
     sun = new Sun(sunSize.value);
     planet = new Planet(planetSize.value);
     moon = new Moon(planetSize.value / 2);
+
+    // Initializing Camera 
+    cam = new Cam(xPos.value, yPos.value);
 }
 
 
@@ -127,12 +144,17 @@ function draw() {
     // Add the stars background
     addBackground();
 
+    // Display value of sliders
+    displayValue()
     // The forces of the gravitational pull
     sunToPlanetForce = new p5.Vector();
     //planetToMoonForce = new p5.Vector();
 
     // Setting the size of the moon to always be half the size of the planet
     moonSizeValue = planetSize.value / 2;
+
+
+    // Change the gravity strength
 
     // sunToPlanetForce is initialized as the strengh of the force that is pulling the planet to the sun 
     sunToPlanetForce = sun.attract(planet);
@@ -154,14 +176,18 @@ function draw() {
     sun.updateSize(sunSize.value);
     moon.updateSize(moonSizeValue);
 
+    // updatePos() changes the postition of the Camera based upon the sliders
+    cam.updatePos(xPos.value, yPos.value);
+
     // Displays the objects, this needs to be the last function applied to the objects
     sun.display();
     planet.display();
     moon.display();
 
+    // Displays Camera
+    cam.display();
 
-    //changes camera parameters for  X,Y,Z 
-    camera(xPos.value, yPos.value, camZDefaultPos, 0, 0, 0, 0, 1, 0);
+
 }
 
 
@@ -219,4 +245,29 @@ function overlayState() {
     overlay.classList.add("overlayFade");
     menu.classList.add("fadeIn");
     div.classList.add("fadeIn");
+}
+
+// Sets the updated value of the sliders to the <p> tag
+function displayValue() {
+    sunSizeValue.textContent = sunSize.value;
+    planetSizeValue.textContent = planetSize.value;
+    xPosValue.textContent = xPos.value;
+    yPosValue.textContent = yPos.value;
+}
+// Controls if the pop up box appears or not
+
+// Helps decide if the pop up box needs to be opened or closed
+let isOpen = false;
+
+function popUpState() {
+
+
+    if (!isOpen) {
+        popUp.style.opacity = "1"
+        isOpen = true;
+    } else {
+        popUp.style.opacity = "0"
+        isOpen = false;
+        console.log(false);
+    }
 }

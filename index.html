@@ -16,7 +16,7 @@
 
       <h1 id="title">GALAXY ENGINEER</h1>
       <button class="overlay-btn" id="enter-btn">Start</button>
-    
+
       <a href="credits.html"><button class="overlay-btn">Credits</button></a>
 
       <div id="help-container">
@@ -36,31 +36,56 @@
       GALAXY ENGINEER
     </h1>
 
+    <div class="input">
+      <label for="planet-size">
+        PLANET SIZE
+      </label>
 
-    <label for="planet-size">
-      PLANET SIZE
-    </label>
-    <input type="range" name="planet-size" id="planet-size" min="10" max="55" value="30">
+      <input type="range" name="planet-size" id="planet-size" min="10" max="55" value="30">
+      <p id="planet-size-value">30</p>
+    </div>
 
-    <label for="sun-size">
-      SUN SIZE
-    </label>
-    <input type="range" name="sun-size" id="sun-size" min="100" max="200" value="50">
+    <div class="input">
+      <label for="sun-size">
+        SUN SIZE
+      </label>
+      <input type="range" name="sun-size" id="sun-size" min="80" max="120" value="80">
+      <p id="sun-size-value">80</p>
 
-    <label for="x-position">
-      X POSITION
-    </label>
-    <input type="range" name="x-position" id="x-position" min="-1000" max="1000" value="0">
+    </div>
 
-    <label for="y-position">
-      Y POSITION
-    </label>
-    <input type="range" name="y-position" id="y-position" min="-700" max="700" value="0">
+    <div class="input">
+      <label for="x-position">
+        X POSITION
+      </label>
+      <input type="range" name="x-position" id="x-position" min="-1000" max="2000" value="0">
+      <p id="xpos-value">0</p>
 
+    </div>
+
+    <div class="input">
+
+      <label for="y-position">
+        Y POSITION
+      </label>
+      <input type="range" name="y-position" id="y-position" min="-700" max="700" value="0">
+      <p id="ypos-value"> 0</p>
+
+    </div>
     <!-- Buttons -->
     <button id="reset">Reset Camera </button>
     <button id="music">Play Music</button>
     <button id="skin-btn">Change Planet</button>
+    <div class="help-btn-container">
+      <button id="help-btn">
+        ?
+      </button>
+      <div class="help-popup">
+        <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quia sapiente atque voluptate
+          necessitatibus nobis asperiores deleniti commodi laudantium. Molestias a ad saepe modi cum distinctio amet
+          aliquid id vel!</p>
+      </div>
+    </div>
 
   </div>
   <div id="sketch-canvas">
@@ -72,7 +97,7 @@
   <script src="sun.js"></script>
   <script src="planet.js"></script>
   <script src="moon.js"></script>
-
+  <script src="cam.js"></script>
   <script src="sketch.js"></script>
 </body>
 

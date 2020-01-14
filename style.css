@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
 
 @import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -32,13 +33,13 @@ body {
     width: 20vw;
     border-radius: 0px 25px 25px 0px;
     border: 2px solid #bd30ce;
-
     /* Change to rgb(30, 30, 30) when p5 background is in */
     background: #3b0662;
     opacity: 0;
     /* This change to flex with JavaScript */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     font-family: 'Space Mono';
     color: #01eff0;
@@ -54,21 +55,23 @@ body {
 
 }
 
-.menu input {
-    margin: 2vh 0 5vh 0;
-    margin-top: -0.2vh;
-}
+
 
 .menu label {
     font-size: 2.5vh;
 
+
+}
+
+.values {
+    margin: 0;
 }
 
 h1 {
     text-align: center;
     font-family: 'Audiowide';
-    margin: 0vh 0 2vh;
- 
+    margin: 2vh 0 2vh;
+
     text-shadow: 0 0 10px #bd30ce,
         0 0 20px #01eff0;
     line-height: 1.5em;
@@ -98,7 +101,7 @@ button:hover {
         0 0 15px #01eff0,
         0 0 15px #01eff0,
         0 0 25px #01eff0;
-       cursor: pointer;
+    cursor: pointer;
 }
 
 /* Overlay Styling  */
@@ -159,7 +162,7 @@ button:hover {
 }
 
 #help-container {
-    height:24vh;
+    height: 24vh;
     width: 90vh;
     margin-top: 4vh;
     border-radius: 25px 25px 25px 25px;
@@ -168,13 +171,13 @@ button:hover {
     font-size: 4vh;
 }
 
-#help-text{
+#help-text {
     font-size: 2vh;
 
 }
 
 .creator-profile {
-    height:80vh;
+    height: 80vh;
     width: 35vh;
     margin-top: 4vh;
     border-radius: 25px 25px 25px 25px;
@@ -212,4 +215,88 @@ button:hover {
 
 
     }
+}
+
+.input {
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.help-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.help-btn-container button {
+    background-color: transparent;
+    width: 7vh;
+    height: 7vh;
+    border-radius: 100%;
+    font-size: 5vh;
+    text-align: center;
+    margin-right: 1vw;
+    color: white;
+    box-shadow: 0 0 10px #01eff0,
+        0 0 15px #01eff0;
+    transition: all .1s ease-in-out;
+
+}
+
+.help-btn-container button:hover {
+    background-color: #01eff0;
+    color: #000000;
+    animation: shake 1s ease-in-out;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(-23deg);
+    }
+
+    25% {
+        transform: rotate(23deg);
+    }
+
+    50% {
+        transform: rotate(-23deg);
+    }
+
+    75% {
+        transform: rotate(23deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.help-btn-container button:active {
+    box-shadow: 0 0 10px #01eff0,
+        0 0 15px #01eff0,
+        inset 0 0 20px #000000;
+    transform: scale(.8);
+}
+
+.help-popup {
+    opacity: 0;
+    background-color: #3b0662;
+    border: 2px solid #bd30ce;
+    box-shadow: 0 0 20px #bd30ce,
+        0 0 100px #bd30ce;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 5vh;
+    left: 23vw;
+    height: fit-content;
+    width: 20vw;
+    transition: opacity 1s ease-in-out;
+}
+
+.help-popup p {
+    margin: 1em;
+
 }
