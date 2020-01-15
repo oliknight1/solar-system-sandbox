@@ -31,7 +31,7 @@ class Sun {
 
 
         force.mult(strength);
-        console.log(p.mass);
+
 
         // return force so it can but used in the applyForce() method of Mover
         return force;

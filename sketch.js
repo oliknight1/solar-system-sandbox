@@ -134,11 +134,12 @@ function setup() {
 
     // Initializing Camera 
     cam = new Cam(xPos.value, yPos.value);
+
 }
 
 
 function draw() {
-    background(15)
+    background(15);
 
     // Add the stars background
     addBackground();
@@ -176,17 +177,25 @@ function draw() {
     moon.updateSize(moonSizeValue);
 
     // updatePos() changes the postition of the Camera based upon the sliders
-    cam.updatePos(xPos.value, yPos.value);
+
 
     // Displays the objects, this needs to be the last function applied to the objects
     sun.display();
     planet.display();
     moon.display();
 
-    // Displays Camera
-    cam.display();
+    // If space is pressed use orbit control, if not default to normal camera
+    if (keyIsPressed && keyIsDown(32)) {
+
+        orbitControl(2, 2);
+        document.querySelector("body").style.cursor = "pointer"
+    } else {
+        cam.updatePos(xPos.value, yPos.value);
+        cam.display();
+        document.querySelector("body").style.cursor = "default"
 
 
+    }
 }
 
 
@@ -267,6 +276,5 @@ function popUpState() {
     } else {
         popUp.style.opacity = "0"
         isOpen = false;
-        console.log(false);
     }
 }
