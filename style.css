@@ -162,13 +162,14 @@ button:hover {
 }
 
 #help-container {
-    height: 24vh;
+    height: fit-content;
     width: 90vh;
-    margin-top: 4vh;
+    margin: 2vh 0;
     border-radius: 25px 25px 25px 25px;
     border: 2px solid #bd30ce;
     text-align: center;
     font-size: 4vh;
+
 }
 
 #help-text {
