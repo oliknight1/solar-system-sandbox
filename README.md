@@ -1,20 +1,5 @@
 # solar-system-sandbox
 
-## TO-DO
-
-- Image for Sun (Tim)
-- Powerpoint
-- Add Moon (Oli)
-- Change planet Button (Tim)
-- Debug shit (Oli)
-- Help page (Tim)
-- Add lighting to the planets (Tyler)
-- Add planets to background (Tyler)
-
-
-
-
-
 ## Code Explanation 
 
 This should hopefully clear up any confusion with the code.

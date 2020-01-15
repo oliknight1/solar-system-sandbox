@@ -31,7 +31,7 @@ class Sun {
 
 
         force.mult(strength);
-        console.log(p.mass);
+
 
         // return force so it can but used in the applyForce() method of Mover
         return force;
@@ -47,12 +47,13 @@ class Sun {
     }
     display() {
         noStroke();
-
         texture(sunImg);
         push()
         translate(this.position.x, this.position.y, this.position.z)
+        ambientLight(200);
+        directionalLight(200, 200, 200, -xPos.value / 100, -yPos.value / 100, -5);
         sphere(this.sunR);
-        pop()
+        pop();
     }
 
 

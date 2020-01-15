@@ -21,13 +21,13 @@ body {
 #sketch-canvas {
     /* Chnage display with JavaScript */
     opacity: 0;
-    width: 80vw;
+    width: 78vw;
 }
 
 .menu {
 
     height: 99.5vh;
-    width: 20vw;
+    width: 22vw;
     border-radius: 0px 25px 25px 0px;
     border: 2px solid #bd30ce;
     /* Change to rgb(30, 30, 30) when p5 background is in */
@@ -159,13 +159,14 @@ button:hover {
 }
 
 #help-container {
-    height: 24vh;
+    height: fit-content;
     width: 90vh;
-    margin-top: 4vh;
+    margin: 2vh 0;
     border-radius: 25px 25px 25px 25px;
     border: 2px solid #bd30ce;
     text-align: center;
     font-size: 4vh;
+
 }
 
 #help-text {
@@ -290,6 +291,7 @@ button:hover {
 
 }
 
+
 .credits-container {
     height: 90vh;
     width: 70vw;
@@ -392,4 +394,14 @@ section {
     color: white;
     text-decoration: none;
     font-size: 3vh;
+
+.btn-container {
+
+    display: grid;
+    width: 100%;
+    height: 20vh;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(50%, 1fr));
+    justify-items: center;
+
 }

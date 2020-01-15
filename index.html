@@ -20,9 +20,16 @@
       <a href="credits.html"><button class="overlay-btn">Credits</button></a>
 
       <div id="help-container">
-        How to play:
-        <div id="help-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores iure inventore blanditiis
-          atque optio necessitatibus maxime doloribus tempora in aspernatur.</div>
+        <p>Tutorial:</p>
+        <div id="help-text"> You can change the size of the sun and the planet using the sliders on the menu, but be
+          careful as if
+          you
+          change the size of the sun, the strength of the gravity changes! Also, you can get a better look at the
+          planets by adjusting the camera position using the sliders, and be sure to use the "Reset Camera" button
+          to set the camera to neutral. Alternatively, if you hold the space-bar down you can get finer control of the
+          camera. You can also click the "Reset Simulation" button in order to
+          reset the camera
+          position and the size of the Sun and PlanetClick the "?" to display this message again. </div>
       </div>
 
     </div>
@@ -72,18 +79,29 @@
       <p id="ypos-value"> 0</p>
 
     </div>
-    <!-- Buttons -->
-    <button id="reset">Reset Camera </button>
-    <button id="music">Play Music</button>
-    <button id="skin-btn">Change Planet</button>
+    <div class="btn-container">
+      <!-- Buttons -->
+      <button id="reset">Reset Camera </button>
+      <button id="music">Play Music</button>
+      <button id="skin-btn">Change Planet</button>
+      <button id="reset-sim">Reset Simulation</button>
+
+
+    </div>
     <div class="help-btn-container">
       <button class="help-btn">
         ?
       </button>
       <div class="help-popup">
-        <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quia sapiente atque voluptate
-          necessitatibus nobis asperiores deleniti commodi laudantium. Molestias a ad saepe modi cum distinctio amet
-          aliquid id vel!</p>
+        <p> You can change the size of the sun and the planet using the sliders on the menu, but be careful as if
+          you
+          change the size of the sun, the strength of the gravity changes! Also, you can get a better look at the
+          planets by adjusting the camera position using the sliders, and be sure to use the "Reset Camera" button
+          to set the camera to neutral. Alternatively, if you hold the space-bar down you can get finer control of the
+          camera. You can also click the "Reset Simulation" button in order to
+          reset the camera
+          position and the size of the Sun and Planet
+        </p>
       </div>
     </div>
 
@@ -97,7 +115,7 @@
   <script src="sun.js"></script>
   <script src="planet.js"></script>
   <script src="moon.js"></script>
-
+  <script src="cam.js"></script>
   <script src="sketch.js"></script>
 </body>
 

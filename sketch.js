@@ -8,6 +8,7 @@ const sunSize = document.querySelector("#sun-size");
 const xPos = document.querySelector("#x-position");
 const yPos = document.querySelector("#y-position");
 
+
 // P tags for displaying value of sliders 
 const planetSizeValue = document.querySelector("#planet-size-value");
 const sunSizeValue = document.querySelector("#sun-size-value");
@@ -16,7 +17,6 @@ const yPosValue = document.querySelector("#ypos-value");
 
 //  pop up box
 const popUp = document.querySelector(".help-popup");
-
 
 // Getting the div that the sketch is inside
 const div = document.querySelector("#sketch-canvas");
@@ -28,16 +28,22 @@ const enterBtn = document.querySelector("#enter-btn");
 const bgMusicBtn = document.querySelector("#music");
 
 // Reset camera button
-const resetBtn = document.querySelector('#reset');
+const resetCamBtn = document.querySelector('#reset');
 
+// Reset sketch button
+const sketchResetBtn = document.querySelector("#reset-sim");
+
+// Change the image on the planet
 const changeSkinBtn = document.querySelector("#skin-btn");
 
 // Event Listeners
 enterBtn.addEventListener("click", overlayState);
+enterBtn.addEventListener("click", bgMusic);
 bgMusicBtn.addEventListener("click", bgMusic);
-resetBtn.addEventListener("click", resetCamera);
+resetCamBtn.addEventListener("click", resetCamera);
 changeSkinBtn.addEventListener("click", changeImages);
 document.querySelector("#help-btn").addEventListener("click", popUpState);
+sketchResetBtn.addEventListener("click", resetSketch);
 
 
 // Global Varibales
@@ -46,6 +52,7 @@ document.querySelector("#help-btn").addEventListener("click", popUpState);
 let planet;
 let sun;
 let moon;
+let cam;
 
 // Variables for the forces
 let sunToPlanetForce;
@@ -90,14 +97,10 @@ let camYPos;
 let divWidth = div.offsetWidth;
 let divHeight = div.offsetHeight;
 
+// Default values for sun and planet size
 
-// Function for adding the stars to the background
-function addBackground() {
-    push();
-    texture(stars);
-    box(4500, 4500, 4500);
-    pop();
-}
+const planetSizeDefault = 30;
+const sunSizeDefault = 80;
 
 
 function preload() {
@@ -105,13 +108,21 @@ function preload() {
     bgAudio = loadSound("background-sounds.mp3");
 
     // Preload the star background
-    stars = loadImage('img/stars.png');
+    stars = loadImage('images/stars.png');
 
     // Preload a random planet from the imgArray
     randomPlanet = random(imgArray);
 
     planetImg = loadImage(randomPlanet);
-    sunImg = loadImage("images/sun-01.jpg");
+    sunImg = loadImage("images/sun.jpg");
+}
+
+// Function for adding the stars to the background
+function addBackground() {
+    push();
+    texture(stars);
+    box(4500, 4500, 4500);
+    pop();
 }
 
 function setup() {
@@ -122,15 +133,15 @@ function setup() {
     // Set the parent of the cavas to the div
     sketchCanvas.parent("sketch-canvas");
 
-    // Initializing the objects
-    sun = new Sun(sunSize.value);
-    planet = new Planet(planetSize.value);
-    moon = new Moon(planetSize.value / 2);
+    // Run the resetSketch which essentially acts as the setup as it creates the objects
+    // By running the function we save on duplicated code
+    resetSketch();
+
 }
 
 
 function draw() {
-    background(15)
+    background(15);
 
     // Add the stars background
     addBackground();
@@ -167,14 +178,27 @@ function draw() {
     sun.updateSize(sunSize.value);
     moon.updateSize(moonSizeValue);
 
+    // updatePos() changes the postition of the Camera based upon the sliders
+
+
     // Displays the objects, this needs to be the last function applied to the objects
     sun.display();
     planet.display();
     moon.display();
 
+    // If space is pressed use orbit control, if not default to normal camera
+    // Also changes the cursor style to make it clear you are in orbit mode
+    if (keyIsPressed && keyIsDown(32)) {
 
-    //changes camera parameters for  X,Y,Z 
-    camera(xPos.value, yPos.value, camZDefaultPos, 0, 0, 0, 0, 1, 0);
+        orbitControl(2, 2);
+        document.querySelector("body").style.cursor = "pointer"
+    } else {
+        cam.updatePos(xPos.value, yPos.value);
+        cam.display();
+        document.querySelector("body").style.cursor = "default"
+
+
+    }
 }
 
 
@@ -255,6 +279,27 @@ function popUpState() {
     } else {
         popUp.style.opacity = "0"
         isOpen = false;
-        console.log(false);
     }
+}
+
+// Reset the sketch so all the values are defaulted 
+function resetObjSize() {
+    planetSize.value = planetSizeDefault;
+    sunSizeVvalue = sunSizeDefault;
+}
+
+function resetSketch() {
+
+    // Initializing the objects again
+    sun = new Sun(sunSize.value);
+    planet = new Planet(planetSize.value);
+    moon = new Moon(planetSize.value / 2);
+
+    // Initializing Camera 
+    cam = new Cam(xPos.value, yPos.value);
+
+    // Run these two functions to reset the size of objects and camera position
+    resetCamera();
+    resetObjSize();
+
 }
