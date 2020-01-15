@@ -308,4 +308,5 @@ button:hover {
     height: 20vh;
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(50%, 1fr));
+    justify-items: center;
 }
