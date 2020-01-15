@@ -46,6 +46,7 @@ document.querySelector("#help-btn").addEventListener("click", popUpState);
 sketchResetBtn.addEventListener("click", resetSketch);
 
 
+
 // Global Varibales
 
 // Variables for objects
