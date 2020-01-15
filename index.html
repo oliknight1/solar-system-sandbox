@@ -1,122 +1,126 @@
-<!DOCTYPE html>
-<html lang="">
+  <!DOCTYPE html>
+  <html lang="">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galaxy Engineer</title>
-  <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Engineer</title>
+    <link rel="stylesheet" href="style.css">
 
-</head>
+  </head>
 
-<body>
-  <div class="overlay">
+  <body>
+    <div class="overlay">
 
-    <div class="splash-container">
+      <div class="splash-container">
 
-      <h1 id="title">GALAXY ENGINEER</h1>
-      <button class="overlay-btn" id="enter-btn">Start</button>
+        <h1 id="title">GALAXY ENGINEER</h1>
+        <div class="btn-wrapper">
+          <button class="overlay-btn" id="enter-btn">Start</button>
 
-      <a href="credits.html"><button class="overlay-btn">Credits</button></a>
+          <a href="credits.html"><button class="overlay-btn">Credits</button></a>
 
-      <div id="help-container">
-        <p>Tutorial:</p>
-        <div id="help-text"> You can change the size of the sun and the planet using the sliders on the menu, but be
-          careful as if
-          you
-          change the size of the sun, the strength of the gravity changes! Also, you can get a better look at the
-          planets by adjusting the camera position using the sliders, and be sure to use the "Reset Camera" button
-          to set the camera to neutral. Alternatively, if you hold the space-bar down you can get finer control of the
-          camera. You can also click the "Reset Simulation" button in order to
-          reset the camera
-          position and the size of the Sun and PlanetClick the "?" to display this message again. </div>
+        </div>
+
+
+        <div id="help-container">
+          <p>Tutorial:</p>
+          <p id="help-text"> You can change the size of the sun and the planet using the sliders on the menu, but be
+            careful as if
+            you
+            change the size of the sun, the strength of the gravity changes! Also, you can get a better look at the
+            planets by adjusting the camera position using the sliders, and be sure to use the "Reset Camera" button
+            to set the camera to neutral. Alternatively, if you hold the space-bar down you can get finer control of the
+            camera. You can also click the "Reset Simulation" button in order to
+            reset the camera
+            position and the size of the Sun and PlanetClick the "?" to display this message again. </p>
+        </div>
+
       </div>
 
     </div>
 
-  </div>
-
-  </div>
-  <!-- Menu for sliders -->
-  <div class="menu">
-    <h1>
-      GALAXY ENGINEER
-    </h1>
-
-    <div class="input">
-      <label for="planet-size">
-        PLANET SIZE
-      </label>
-
-      <input type="range" name="planet-size" id="planet-size" min="10" max="55" value="30">
-      <p id="planet-size-value">30</p>
     </div>
+    <!-- Menu for sliders -->
+    <div class="menu">
+      <h1>
+        GALAXY ENGINEER
+      </h1>
 
-    <div class="input">
-      <label for="sun-size">
-        SUN SIZE
-      </label>
-      <input type="range" name="sun-size" id="sun-size" min="80" max="120" value="80">
-      <p id="sun-size-value">80</p>
+      <div class="input">
+        <label for="planet-size">
+          PLANET SIZE
+        </label>
 
-    </div>
-
-    <div class="input">
-      <label for="x-position">
-        X POSITION
-      </label>
-      <input type="range" name="x-position" id="x-position" min="-1000" max="2000" value="0">
-      <p id="xpos-value">0</p>
-
-    </div>
-
-    <div class="input">
-
-      <label for="y-position">
-        Y POSITION
-      </label>
-      <input type="range" name="y-position" id="y-position" min="-700" max="700" value="0">
-      <p id="ypos-value"> 0</p>
-
-    </div>
-    <div class="btn-container">
-      <!-- Buttons -->
-      <button id="reset">Reset Camera </button>
-      <button id="music">Play Music</button>
-      <button id="skin-btn">Change Planet</button>
-      <button id="reset-sim">Reset Simulation</button>
-
-
-    </div>
-    <div class="help-btn-container">
-      <button id="help-btn">
-        ?
-      </button>
-      <div class="help-popup">
-        <p> You can change the size of the sun and the planet using the sliders on the menu, but be careful as if
-          you
-          change the size of the sun, the strength of the gravity changes! Also, you can get a better look at the
-          planets by adjusting the camera position using the sliders, and be sure to use the "Reset Camera" button
-          to set the camera to neutral. Alternatively, if you hold the space-bar down you can get finer control of the
-          camera. You can also click the "Reset Simulation" button in order to
-          reset the camera
-          position and the size of the Sun and Planet
-        </p>
+        <input type="range" name="planet-size" id="planet-size" min="10" max="55" value="30">
+        <p id="planet-size-value">30</p>
       </div>
+
+      <div class="input">
+        <label for="sun-size">
+          SUN SIZE
+        </label>
+        <input type="range" name="sun-size" id="sun-size" min="80" max="120" value="80">
+        <p id="sun-size-value">80</p>
+
+      </div>
+
+      <div class="input">
+        <label for="x-position">
+          X POSITION
+        </label>
+        <input type="range" name="x-position" id="x-position" min="-1000" max="2000" value="0">
+        <p id="xpos-value">0</p>
+
+      </div>
+
+      <div class="input">
+
+        <label for="y-position">
+          Y POSITION
+        </label>
+        <input type="range" name="y-position" id="y-position" min="-700" max="700" value="0">
+        <p id="ypos-value"> 0</p>
+
+      </div>
+      <div class="btn-container">
+        <!-- Buttons -->
+        <button id="reset">Reset Camera </button>
+        <button id="music">Play Music</button>
+        <button id="skin-btn">Change Planet</button>
+        <button id="reset-sim">Reset Simulation</button>
+
+
+      </div>
+      <div class="help-btn-container">
+        <button id="help-btn" class="circle-btn">
+          ?
+        </button>
+        <div class="help-popup">
+          <p> You can change the size of the sun and the planet using the sliders on the menu, but be careful as if
+            you
+            change the size of the sun, the strength of the gravity changes! Also, you can get a better look at the
+            planets by adjusting the camera position using the sliders, and be sure to use the "Reset Camera" button
+            to set the camera to neutral. Alternatively, if you hold the space-bar down you can get finer control of the
+            camera. You can also click the "Reset Simulation" button in order to
+            reset the camera
+            position and the size of the Sun and Planet
+          </p>
+        </div>
+      </div>
+
     </div>
+    <div id="sketch-canvas">
+      <!-- This is where the p5.js sketch is -->
+    </div>
+    <script src="p5.js"></script>
+    <script src="p5.dom.js"></script>
+    <script src="p5.sound.js"></script>
+    <script src="sun.js"></script>
+    <script src="planet.js"></script>
+    <script src="moon.js"></script>
+    <script src="cam.js"></script>
+    <script src="sketch.js"></script>
+  </body>
 
-  </div>
-  <div id="sketch-canvas">
-    <!-- This is where the p5.js sketch is -->
-  </div>
-  <script src="p5.js"></script>
-  <script src="p5.dom.js"></script>
-  <script src="p5.sound.js"></script>
-  <script src="sun.js"></script>
-  <script src="planet.js"></script>
-  <script src="moon.js"></script>
-  <script src="cam.js"></script>
-  <script src="sketch.js"></script>
-</body>
-
-</html>
+  </html>

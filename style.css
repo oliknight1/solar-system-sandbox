@@ -76,6 +76,7 @@ h1 {
         0 0 20px #01eff0;
     line-height: 1.5em;
     letter-spacing: .5vh;
+    font-size: 4vw;
 }
 
 button {
@@ -130,17 +131,17 @@ button:hover {
 .splash-container {
     height: 90vh;
     width: 70vw;
-    border-radius: 25px 25px 25px 25px;
+    border-radius: 25px;
     border: 2px solid #bd30ce;
     font-size: 5.5vh;
     /* Change to rgb(30, 30, 30) when p5 background is in */
     background: #3b0662;
     font-size: 5vh;
     font-family: 'Space Mono';
-
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     box-shadow: 0 0 20px #bd30ce,
         0 0 100px #bd30ce;
 
@@ -148,10 +149,17 @@ button:hover {
     z-index: 1;
 }
 
+.btn-wrapper {
+    width: 45vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .overlay-btn {
     font-size: 5vh;
-    margin-top: 3vh;
-    font-family: 'Space Mono';
+
+
     width: 18vw;
     height: 12vh;
 }
@@ -164,7 +172,7 @@ button:hover {
 #help-container {
     height: fit-content;
     width: 90vh;
-    margin: 2vh 0;
+    margin: 1vh 0 3vh;
     border-radius: 25px 25px 25px 25px;
     border: 2px solid #bd30ce;
     text-align: center;
@@ -174,8 +182,11 @@ button:hover {
 
 #help-text {
     font-size: 2vh;
+    margin: 2vh 4vh;
 
 }
+
+
 
 .creator-profile {
     height: 80vh;
@@ -232,7 +243,7 @@ button:hover {
     justify-content: flex-end;
 }
 
-.help-btn-container button {
+.circle-btn {
     background-color: transparent;
     width: 7vh;
     height: 7vh;
@@ -275,7 +286,7 @@ button:hover {
     }
 }
 
-.help-btn-container button:active {
+.circle-btn:active {
     box-shadow: 0 0 10px #01eff0,
         0 0 15px #01eff0,
         inset 0 0 20px #000000;
@@ -310,4 +321,70 @@ button:hover {
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(50%, 1fr));
     justify-items: center;
+}
+
+.credits-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.creator-profile {
+    height: 50vh;
+    width: 20vw;
+    margin-top: 4vh;
+    border-radius: 25px 25px 25px 25px;
+    border: 2px solid #bd30ce;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.creator-profile p {
+    text-align: center;
+    font-size: 3.5vh;
+}
+
+.creator-profile ul {
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.creator-profile li {
+    list-style-type: none;
+    margin: 3vh 0;
+    font-size: 3vh;
+
+
+}
+
+.creator-profile i {
+    font-size: 5vh;
+}
+
+.creator-profile a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.back-btn-wrapper {
+    position: absolute;
+    left: 16vw;
+    top: 8vh;
+}
+
+.back-btn-wrapper i {
+    font-size: 2vw;
 }
