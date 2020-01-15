@@ -18,8 +18,6 @@ const yPosValue = document.querySelector("#ypos-value");
 //  pop up box
 const popUp = document.querySelector(".help-popup");
 
-
-
 // Getting the div that the sketch is inside
 const div = document.querySelector("#sketch-canvas");
 
@@ -30,17 +28,22 @@ const enterBtn = document.querySelector("#enter-btn");
 const bgMusicBtn = document.querySelector("#music");
 
 // Reset camera button
-const resetBtn = document.querySelector('#reset');
+const resetCamBtn = document.querySelector('#reset');
 
+// Reset sketch button
+const sketchResetBtn = document.querySelector("#reset-sim");
+
+// Change the image on the planet
 const changeSkinBtn = document.querySelector("#skin-btn");
 
 // Event Listeners
 enterBtn.addEventListener("click", overlayState);
 enterBtn.addEventListener("click", bgMusic);
 bgMusicBtn.addEventListener("click", bgMusic);
-resetBtn.addEventListener("click", resetCamera);
+resetCamBtn.addEventListener("click", resetCamera);
 changeSkinBtn.addEventListener("click", changeImages);
 document.querySelector("#help-btn").addEventListener("click", popUpState);
+sketchResetBtn.addEventListener("click", resetSketch);
 
 
 // Global Varibales
@@ -94,7 +97,10 @@ let camYPos;
 let divWidth = div.offsetWidth;
 let divHeight = div.offsetHeight;
 
+// Default values for sun and planet size
 
+const planetSizeDefault = 30;
+const sunSizeDefault = 80;
 
 
 function preload() {
@@ -127,13 +133,9 @@ function setup() {
     // Set the parent of the cavas to the div
     sketchCanvas.parent("sketch-canvas");
 
-    // Initializing the objects
-    sun = new Sun(sunSize.value);
-    planet = new Planet(planetSize.value);
-    moon = new Moon(planetSize.value / 2);
-
-    // Initializing Camera 
-    cam = new Cam(xPos.value, yPos.value);
+    // Run the resetSketch which essentially acts as the setup as it creates the objects
+    // By running the function we save on duplicated code
+    resetSketch();
 
 }
 
@@ -185,6 +187,7 @@ function draw() {
     moon.display();
 
     // If space is pressed use orbit control, if not default to normal camera
+    // Also changes the cursor style to make it clear you are in orbit mode
     if (keyIsPressed && keyIsDown(32)) {
 
         orbitControl(2, 2);
@@ -277,4 +280,26 @@ function popUpState() {
         popUp.style.opacity = "0"
         isOpen = false;
     }
+}
+
+// Reset the sketch so all the values are defaulted 
+function resetObjSize() {
+    planetSize.value = planetSizeDefault;
+    sunSizeVvalue = sunSizeDefault;
+}
+
+function resetSketch() {
+
+    // Initializing the objects again
+    sun = new Sun(sunSize.value);
+    planet = new Planet(planetSize.value);
+    moon = new Moon(planetSize.value / 2);
+
+    // Initializing Camera 
+    cam = new Cam(xPos.value, yPos.value);
+
+    // Run these two functions to reset the size of objects and camera position
+    resetCamera();
+    resetObjSize();
+
 }
