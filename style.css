@@ -50,6 +50,10 @@ body {
     z-index: 1;
 }
 
+.menu h1 {
+    font-size: 5vh;
+}
+
 .fadeIn {
     animation: fadeIn 1s ease-in-out forwards;
 
