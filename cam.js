@@ -13,6 +13,7 @@ class Cam {
 
     // Draws Camera with new placement
     display() {
-        camera(this.camXPos, this.camYPos, this.camZDefaultPos, 0, 0, 0, 0, 1, 0);
+        // (height / 2) / tan(PI / 6) is the standard for a default Z position from the Processing docs
+        camera(this.camXPos, this.camYPos, (height / 2) / tan(PI / 6), 0, 0, 0, 0, 1, 0);
     }
 }
