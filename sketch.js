@@ -261,8 +261,8 @@ function overlayState() {
 
 // Sets the updated value of the sliders to the <p> tag
 function displayValue() {
-    sunSizeValue.textContent = sunSize.value;
-    planetSizeValue.textContent = planetSize.value;
+    sunSizeValue.textContent = sunSize.value + "00 km";
+    planetSizeValue.textContent = planetSize.value + "00 km";
     xPosValue.textContent = xPos.value;
     yPosValue.textContent = yPos.value;
 }
