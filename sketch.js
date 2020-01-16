@@ -36,7 +36,14 @@ const sketchResetBtn = document.querySelector("#reset-sim");
 // Change the image on the planet
 const changeSkinBtn = document.querySelector("#skin-btn");
 
+// Menu that appears whne you click the slider
+const sliderMenu = document.querySelector(".slider-popup");
+
 // Event Listeners
+planetSize.addEventListener("mousedown", sliderPopUp);
+sunSize.addEventListener("mousedown", sliderPopUp);
+xPos.addEventListener("mousedown", sliderPopUp);
+yPos.addEventListener("mousedown", sliderPopUp);
 enterBtn.addEventListener("click", overlayState);
 enterBtn.addEventListener("click", bgMusic);
 bgMusicBtn.addEventListener("click", bgMusic);
@@ -256,6 +263,8 @@ function overlayState() {
 
     // Add the CSS classes that have the animation property to the elements
     overlay.classList.add("overlayFade");
+    // Allow the user to click on the menu when the overlay is removed
+    menu.style.pointerEvents = "all"
     menu.classList.add("fadeIn");
     div.classList.add("fadeIn");
 }
@@ -304,4 +313,18 @@ function resetSketch() {
     resetCamera();
     resetObjSize();
 
+}
+
+function sliderPopUp(e) {
+    const sliderText = document.querySelector(".slider-text")
+    sliderMenu.style.opacity = 1
+    if (e.target.id == "planet-size") {
+        sliderText.textContent = "When changing the size of the planet, be careful as it will effect the strength of the gravitational pull, if it becomes out of control, press the \"Reset Simulation\" button "
+    } else if (e.target.id == "sun-size") {
+        sliderText.textContent = "When changing the size of the sun, be careful as it will effect the strength of the gravitational pull, if it becomes out of control, press the \"Reset Simulation\" button "
+    } else if (e.target.id == "x-position") {
+        sliderText.textContent = "This slider will change the X position of the slider, if the value is a positive number, it will move the camera to the right of the default position, if it is a negative number, it will move the camera to the left of it's original position. To reset the camera back to default press the\"Reset Simulation\" button "
+    } else if (e.target.id == "y-position") {
+        sliderText.textContent = "This slider will change the Y position of the slider, if the value is a positive number, it will move the camera below default position, if it is a negative number, it will move the camera above of it's original position. To reset the camera back to default press the\"Reset Simulation\" button "
+    }
 }
