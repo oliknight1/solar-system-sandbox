@@ -28,7 +28,6 @@ body {
 }
 
 .menu {
-
     height: 99.5vh;
     width: 22vw;
     border-radius: 0px 25px 25px 0px;
@@ -48,6 +47,9 @@ body {
 
     /* allows the box shadow to be displayed over the div */
     z-index: 1;
+    /* Makes the start button always clickable */
+    pointer-events: none;
+
 }
 
 .menu h1 {
@@ -97,7 +99,7 @@ button {
     box-shadow: 0 0 10px #01eff0,
         0 0 15px #01eff0;
     font-family: 'Space Mono';
-
+    z-index: 99;
 
 }
 
@@ -319,6 +321,15 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+
+.slider-popup {
+
+    width: 20vw;
+    bottom: 0vh;
+    top: 1vh;
+    padding: 1em;
+
 }
 
 .help-popup p {
