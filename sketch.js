@@ -43,6 +43,7 @@ bgMusicBtn.addEventListener("click", bgMusic);
 resetCamBtn.addEventListener("click", resetCamera);
 changeSkinBtn.addEventListener("click", changeImages);
 document.querySelector("#help-btn").addEventListener("click", popUpState);
+document.querySelector("#close-btn").addEventListener("click", popUpState)
 sketchResetBtn.addEventListener("click", resetSketch);
 
 
