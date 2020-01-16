@@ -329,6 +329,33 @@ button:hover {
     bottom: 0vh;
     top: 1vh;
     padding: 1em;
+    opacity: 0;
+    background-color: #3b0662;
+    border: 2px solid #bd30ce;
+    box-shadow: 0 0 20px #bd30ce,
+        0 0 100px #bd30ce;
+    border-radius: 25px;
+    position: absolute;
+
+    left: 23vw;
+    height: fit-content;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.slider-popup i {
+    font-size: 2.5vw;
+    position: relative;
+    top: 1vh;
+    right: 3vh;
+    cursor: pointer;
+}
+
+.slider-popup p {
+    margin: 1em;
 
 }
 

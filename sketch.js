@@ -41,6 +41,7 @@ const sliderMenu = document.querySelector(".slider-popup");
 
 // Event Listeners
 planetSize.addEventListener("mousedown", sliderPopUp);
+document.querySelector("#close-btn-slider").addEventListener("click", sliderPopUp);
 sunSize.addEventListener("mousedown", sliderPopUp);
 xPos.addEventListener("mousedown", sliderPopUp);
 yPos.addEventListener("mousedown", sliderPopUp);
@@ -50,7 +51,7 @@ bgMusicBtn.addEventListener("click", bgMusic);
 resetCamBtn.addEventListener("click", resetCamera);
 changeSkinBtn.addEventListener("click", changeImages);
 document.querySelector("#help-btn").addEventListener("click", popUpState);
-document.querySelector("#close-btn").addEventListener("click", popUpState)
+document.querySelector("#close-btn").addEventListener("click", popUpState);
 sketchResetBtn.addEventListener("click", resetSketch);
 
 
@@ -279,17 +280,17 @@ function displayValue() {
 // Controls if the pop up box appears or not
 
 // Helps decide if the pop up box needs to be opened or closed
-let isOpen = false;
+let isHelpOpen = false;
 
 function popUpState() {
 
 
-    if (!isOpen) {
+    if (!isHelpOpen) {
         popUp.style.opacity = "1"
-        isOpen = true;
+        isHelpOpen = true;
     } else {
         popUp.style.opacity = "0"
-        isOpen = false;
+        isHelpOpen = false;
     }
 }
 
@@ -315,16 +316,26 @@ function resetSketch() {
 
 }
 
+let isSliderHelpOpen = false;
+
 function sliderPopUp(e) {
-    const sliderText = document.querySelector(".slider-text")
-    sliderMenu.style.opacity = 1
-    if (e.target.id == "planet-size") {
-        sliderText.textContent = "When changing the size of the planet, be careful as it will effect the strength of the gravitational pull, if it becomes out of control, press the \"Reset Simulation\" button "
-    } else if (e.target.id == "sun-size") {
-        sliderText.textContent = "When changing the size of the sun, be careful as it will effect the strength of the gravitational pull, if it becomes out of control, press the \"Reset Simulation\" button "
-    } else if (e.target.id == "x-position") {
-        sliderText.textContent = "This slider will change the X position of the slider, if the value is a positive number, it will move the camera to the right of the default position, if it is a negative number, it will move the camera to the left of it's original position. To reset the camera back to default press the\"Reset Simulation\" button "
-    } else if (e.target.id == "y-position") {
-        sliderText.textContent = "This slider will change the Y position of the slider, if the value is a positive number, it will move the camera below default position, if it is a negative number, it will move the camera above of it's original position. To reset the camera back to default press the\"Reset Simulation\" button "
+
+    if (!isSliderHelpOpen) {
+        const sliderText = document.querySelector(".slider-text")
+        sliderMenu.style.opacity = 1
+        if (e.target.id == "planet-size") {
+            sliderText.textContent = "When changing the size of the planet, be careful as it will effect the strength of the gravitational pull, if it becomes out of control, press the \"Reset Simulation\" button "
+        } else if (e.target.id == "sun-size") {
+            sliderText.textContent = "When changing the size of the sun, be careful as it will effect the strength of the gravitational pull, if it becomes out of control, press the \"Reset Simulation\" button "
+        } else if (e.target.id == "x-position") {
+            sliderText.textContent = "This slider will change the X position of the slider, if the value is a positive number, it will move the camera to the right of the default position, if it is a negative number, it will move the camera to the left of it's original position. To reset the camera back to default press the\"Reset Simulation\" button "
+        } else if (e.target.id == "y-position") {
+            sliderText.textContent = "This slider will change the Y position of the slider, if the value is a positive number, it will move the camera below default position, if it is a negative number, it will move the camera above of it's original position. To reset the camera back to default press the\"Reset Simulation\" button "
+        }
+        isSliderHelpOpen = true
+    } else {
+        sliderMenu.style.opacity = 0;
+        isSliderHelpOpen = false
     }
+
 }
